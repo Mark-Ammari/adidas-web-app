@@ -1,0 +1,33 @@
+.navbar {
+    font-family: AdihausDIN,Helvetica,Arial,sans-serif;
+
+}
+
+.navlinks {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.navlinks ul {
+    list-style-type: none;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+.navlinks ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.navlinks ul li a:hover {
+    text-decoration: underline;
+}
+
+.navlinks ul li:nth-child(1) {
+    font-weight: bold;
+    font-size: 14pt;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}

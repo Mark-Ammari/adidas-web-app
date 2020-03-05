@@ -1,0 +1,34 @@
+.btncontainer {
+    width: 125px;
+    height: 25px;
+    padding: 10px;
+    background-color: black;
+    z-index: 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
+    font-weight: bold;
+    position: relative;
+    margin: 1em;
+    cursor: pointer;
+    font-family: AdihausDIN,Helvetica,Arial,sans-serif;
+}
+
+.btncontainer:hover {
+    color: grey
+}
+
+.btn {
+    width: 125px;
+    height: 25px;
+    padding: 10px;
+    border: 1px solid black;
+    transform: translate(3px,3px);
+    position: absolute;
+    top: 0;
+    left: 0
+}

@@ -1,0 +1,23 @@
+.trendingbar {
+    display: flex;
+    overflow-x: scroll;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.trendingbar::-webkit-scrollbar-thumb {
+    color: #ccc;
+}
+.trendingbar::-webkit-scrollbar-track {
+    color: #ccc;
+}
+.trendingbar::-webkit-scrollbar-corner {
+    border-radius: 5px;
+
+}
+
+.trendingtitle {
+    text-align: center;
+    padding-top: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}

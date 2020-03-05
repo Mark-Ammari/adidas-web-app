@@ -1,0 +1,29 @@
+.navimglink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px;
+    text-align: center;
+    margin: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navimglink:hover {
+    opacity: 0.75;
+}
+
+.navimglink a {
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.navimglink a:hover {
+    color: white;
+    background: black
+}

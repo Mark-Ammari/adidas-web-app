@@ -1,0 +1,115 @@
+{
+    "men": {
+        "path": "/men",
+        "shoes": [
+            {"name": "shoes", "path": "/men-shoes"},
+            {"name": "New Arrivals", "path": "/men-shoes-new_arrivals"},
+            {"name": "Originals", "path": "/men-originals-shoes"},
+            {"name": "Running", "path": "/men-running-shoes"},
+            {"name": "Soccer", "path": "/men-soccer-shoes"},
+            {"name": "Basketball", "path": "/men-basketball-shoes"},
+            {"name": "Football", "path": "/men-football-shoes"},
+            {"name": "Skateboarding", "path": "/men-skateboarding-shoes"},
+            {"name": "Workout", "path": "/men-training-shoes"},
+            {"name": "Essentials", "path": "/men-essentials-shoes"},
+            {"name": "Sandals & Slides", "path": "/men-slides"},
+            {"name": "Hiking & Outdoor", "path": "/men-outdoor-shoes"},
+            {"name": "Golf", "path": "/men-golf-shoes"},
+            {"name": "Tennis", "path": "/men-tennis-shoes"},
+            {"name": "Baseball", "path": "/men-baseball-shoes"}
+        ],
+        "clothing": [
+            {"name": "clothing", "path": "/men-apparel"},
+            {"name": "New Arrivals", "path": "/men-apparel-new_arrivals"},
+            {"name": "Pants", "path": "/men-pants"},
+            {"name": "Hoodies & Sweatshirts", "path": "/men-hoodies_sweatshirts"},
+            {"name": "Jackets & Vests", "path": "/men-jackets"},
+            {"name": "Track Suits", "path": "/men-track_suits"},
+            {"name": "Short Sleeve Shirts", "path": "/men-short_sleeve_shirts"},
+            {"name": "T-Shirts", "path": "/men-t_shirts"},
+            {"name": "Long Sleeve Shirts", "path": "/men-long_sleeve-shirts"},
+            {"name": "Jerseys", "path": "/men-jerseys"},
+            {"name": "Tights", "path": "/men-tights"},
+            {"name": "Shorts", "path": "/men-shorts"},
+            {"name": "Tank Tops", "path": "/men-tank_tops"},
+            {"name": "Swim", "path": "/men-swim-apparel"},
+            {"name": "Socks & Underwear", "path": "/men-socks%7Cunderwear"}
+        ],
+        "accessories": [
+            {"name": "Accessories", "path": "/men-accessories"},
+            {"name": "New Arrivals", "path": "/men-accessories-new_arrivals"},
+            {"name": "Bags & Backpacks", "path": "/men-bags"},
+            {"name": "Hats & Beanies", "path": "/men-hats"},
+            {"name": "Phone Cases", "path": "/men-phone_cases"},
+            {"name": "Watches", "path": "/watches-accessories"}
+        ]
+    },
+    "women": {
+        "path": "/women",
+        "shoes": [
+            {"name": "shoes", "path": "/women-shoes"},
+            {"name": "New Arrivals", "path": "/women-shoes-new_arrivals"},
+            {"name": "Originals", "path": "/women-originals-shoes"},
+            {"name": "Running", "path": "/women-running-shoes"},
+            {"name": "Workout", "path": "/women-training-shoes"},
+            {"name": "Soccer", "path": "/women-soccer-shoes"}, 
+            {"name": "Essentials", "path": "/women-essentials-shoes"},
+            {"name": "Sandals & Slides", "path": "/women-slides"},
+            {"name": "Hiking & Outdoor", "path": "/women-outdoor-shoes"},
+            {"name": "Tennis", "path": "/women-tennis-shoes"}, 
+            {"name": "Golf", "path": "/women-golf-shoes"},
+            {"name": "Volleyball", "path": "/women-volleyball-shoes"},
+            {"name": "Softball", "path": "/women-softball"}
+        ],
+        "clothing": [
+            {"name": "clothing", "path": "/women-apparel"},
+            {"name": "New Arrivals", "path": "/women-apparel-new_arrivals"},
+            {"name": "Plus Sizes 1X - 4X", "path": "/plus_size"},
+            {"name": "Hoodies & Sweatshirts", "path": "/women-hoodies_sweatshirts"}, 
+            {"name": "Pants", "path": "/women-pants"},
+            {"name": "Leggings & Tights", "path": "/women-tights"},
+            {"name": "Sports Bras", "path": "/women-bras"},
+            {"name": "Track Suits", "path": "/women-track_suits"},
+            {"name": "Jackets & Vests", "path": "/women-jackets"},
+            {"name": "Short Sleeve Shirts", "path": "/women-short_sleeve_shirts"},
+            {"name": "Long Sleeve Shirts", "path": "/women-long_sleeve-shirts"},
+            {"name": "Dresses & Skirts", "path": "/women-dress_and_skirts"},
+            {"name": "Shorts", "path": "/women-shorts"},
+            {"name": "Tank Tops", "path": "/women-tank_tops"},
+            {"name": "Swim", "path": "/women-swim-apparel"},
+            {"name": "Socks", "path": "/women-socks"}
+        ],
+        "accessories": [
+            {"name": "Accessories", "path": "/women-accessories"},
+            {"name": "New Arrivals", "path": "/women-accessories-new_arrivals"},
+            {"name": "Bags & Backpacks", "path": "/women-bags"},
+            {"name": "Hats & Beanies", "path": "/women-hats"},
+            {"name": "Phone Cases", "path": "/women-phone_cases"},
+            {"name": "Watches", "path": "/watches-accessories"}
+        ]
+    },
+    "kids": {
+        "path": "/kids",
+        "youth": [
+            {"name": "youth (age 8-14)", "path": "/kids-youth"},
+            {"name": "Boys Shoes", "path": "/kids-boys-youth-shoes"},
+            {"name": "Girls Shoes", "path": "/kids-girls-youth-shoes"},
+            {"name": "Boys Clothing", "path": "/kids-boys-youth-apparel"},
+            {"name": "Girls Clothing", "path": "/kids-girls-youth-apparel"},
+            {"name": "Accessories", "path": "/kids-accessories"}
+        ],
+        "children": [
+            {"name": "children (age 4-8)", "path": "/kids-children"},
+            {"name": "Boys Shoes", "path": "/kids-boys-children-shoes"},
+            {"name": "Girls Shoes", "path": "/kids-girls-children-shoes"},
+            {"name": "Boys Clothing", "path": "/kids-boys-children-apparel"},
+            {"name": "Girls Clothing", "path": "/kids-girls-children-apparel"},
+            {"name": "Accessories", "path": "/kids-accessories"}
+        ],
+        "babies": [
+            {"name": "baby & toddler (age 0-4)", "path": "/kids-infant_toddler"},
+            {"name": "Shoes", "path": "/kids-infant_toddler-shoes"},
+            {"name": "Clothing", "path": "/kids-infant_toddler-apparel"}
+        ]
+    }
+}
