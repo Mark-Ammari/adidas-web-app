@@ -10,8 +10,8 @@ const Footer = () => {
         className="Footer">
             <p>Created by Mark Ammari</p>
             <div>
-                <a re="noopener noreferrer" target="_blank" href="https://github.com/Mark-Ammari"><img src={github} alt="github" /></a>
-                <a rel="noopener noreferrer" target="_blank" href="https://github.com/Mark-Ammari/trello-copy"><img src={sourcecode} alt="source-code" /></a>
+                <a rel="noopener noreferrer" target="_blank" href="https://github.com/Mark-Ammari"><img src={github} alt="github" /></a>
+                <a rel="noopener noreferrer" target="_blank" href="https://github.com/Mark-Ammari/adidas-web-app"><img src={sourcecode} alt="source-code" /></a>
             </div>
         </footer>
     );

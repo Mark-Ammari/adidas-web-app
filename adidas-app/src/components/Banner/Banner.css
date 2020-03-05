@@ -1,0 +1,147 @@
+.banner {
+    height: 400px;
+    min-width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/bannermobile.webp);
+}
+
+.bannerslogan {
+    text-shadow: 1px 1px #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.btncontain {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding-bottom: 10px;
+    bottom: 0;
+    margin: 0 auto
+}
+
+@media only screen and (max-width: 320px) {
+    .bannerslogan {
+        margin: 0 auto;
+        padding-left: 10px;
+        font-size: 32px;
+    }
+    .btncontain {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding-bottom: 10px;
+        bottom: 0;
+        margin: 0 auto
+    }
+}
+
+@media only screen and (min-width: 321px) {
+    .bannerslogan {
+        margin: 0 auto;
+        padding-left: 10px;
+        font-size: 38px;
+    }
+    .banner {
+        height: 500px;
+    }
+    .btncontain {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding-bottom: 10px;
+        bottom: 0;
+        margin: 0 auto
+    }
+}
+
+@media only screen and (min-width: 529px) {
+    .bannerslogan {
+        margin: 0 auto;
+        padding-left: 10px;
+        font-size: 64px;
+    }
+    .banner {
+        height: 550px;
+    }
+    .btncontain {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding-bottom: 10px;
+        bottom: 0;
+        margin: 0 auto
+    }
+}
+
+@media only screen and (min-width: 880px) {
+    .bannerslogan {
+        padding-left: 10px;
+        padding-bottom: 10px;
+        font-size: 54px;
+    }
+    .btncontain {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 20px;
+        width: 425px;
+        top: 0;
+        margin: 0 auto
+    }
+    .banner {
+        height: 600px;
+        background-image: url(../../assets/banner.webp);
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    .bannerslogan {
+        padding-left: 10px;
+        padding-bottom: 10px;
+        font-size: 58px;
+    }
+    .btncontain {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 20px;
+        width: 450px;
+        top: 0;
+        margin: 0 auto
+    }
+    .banner {
+        height: 600px;
+        background-image: url(../../assets/banner.webp);
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .bannerslogan {
+        padding-left: 10px;
+        padding-bottom: 10px;
+        font-size: 64px;
+    }
+    .btncontain {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 20px;
+        width: 500px;
+        top: 0;
+        margin: 0 auto
+    }
+    .banner {
+        height: 600px;
+        background-image: url(../../assets/banner.webp);
+    }
+}

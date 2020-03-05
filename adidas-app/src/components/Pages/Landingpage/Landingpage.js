@@ -5,23 +5,16 @@ import { Typography } from '@material-ui/core';
 import TrendingBar from '../../TrendingBar/TrendingBar';
 import AboutUs from '../../AboutUs/AboutUs';
 import NavImgLinkSection from '../../NavImgLinkSection/NavImgLinkSection';
+import Banner from '../../Banner/Banner';
 
 const landingpage = (props) => {
     return (
-        <>
-        <div className="banner">
-            <div className="btncontain">
-                <h2 className="bannerslogan" >That Boost Hype Is Real</h2>
-                <div>
-                    <AdiBtn to="/men">Shop Men</AdiBtn>
-                    <AdiBtn to="/women">Shop Women</AdiBtn>
-                </div>
-            </div>
+        <div>
+            <Banner />
+            <NavImgLinkSection />
+            <AboutUs />
+            <TrendingBar />
         </div>
-        <NavImgLinkSection />
-        <AboutUs />
-        <TrendingBar />
-        </>
     );
 }
 
