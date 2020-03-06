@@ -9,7 +9,7 @@ import { Typography } from '@material-ui/core';
 
 const NavImgLinkSection = props => {
     return (
-        <>
+        <div className="navimglinksect">
             <div className="trendingtitle">
                 <Typography variant="h4">Shop Now</Typography>
             </div>
@@ -19,7 +19,7 @@ const NavImgLinkSection = props => {
                 <NavImgLink to="/women-shoes" img={womenShoes}>Women's Shoes</NavImgLink>
                 <NavImgLink to="/women-apparel" img={womensClothes}>Women's Apparel</NavImgLink>
             </div>
-        </>
+        </div>
     );
 };
 

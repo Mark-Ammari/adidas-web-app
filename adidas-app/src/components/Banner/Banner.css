@@ -1,6 +1,6 @@
 .banner {
-    height: 400px;
-    min-width: 100%;
+    width: 1366px;
+    margin: 0 auto;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -12,6 +12,7 @@
     text-shadow: 1px 1px #fff;
     font-family: Helvetica, Arial, sans-serif;
     text-transform: uppercase;
+    padding-left: 10px;
 }
 
 .btncontain {
@@ -26,16 +27,11 @@
 @media only screen and (max-width: 320px) {
     .bannerslogan {
         margin: 0 auto;
-        padding-left: 10px;
         font-size: 32px;
     }
-    .btncontain {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        padding-bottom: 10px;
-        bottom: 0;
-        margin: 0 auto
+    .banner {
+        height: 500px;
+        width: 100%;
     }
 }
 
@@ -46,84 +42,75 @@
         font-size: 38px;
     }
     .banner {
-        height: 500px;
-    }
-    .btncontain {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        padding-bottom: 10px;
-        bottom: 0;
-        margin: 0 auto
+        height: 450px;
+        width: 100%;
     }
 }
 
-@media only screen and (min-width: 529px) {
+@media only screen and (min-width: 600px) {
     .bannerslogan {
         margin: 0 auto;
         padding-left: 10px;
         font-size: 64px;
     }
     .banner {
-        height: 550px;
-    }
-    .btncontain {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        padding-bottom: 10px;
-        bottom: 0;
-        margin: 0 auto
+        height: 500px;
+        width: 100%;
     }
 }
 
-@media only screen and (min-width: 880px) {
+@media only screen and (min-width: 768px) {
     .bannerslogan {
         padding-left: 10px;
         padding-bottom: 10px;
         font-size: 54px;
     }
     .btncontain {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
         justify-content: center;
-        align-items: flex-start;
-        padding-top: 20px;
-        width: 425px;
+        width: 400px;
         top: 0;
-        margin: 0 auto
     }
     .banner {
-        height: 600px;
+        height: 550px;
+        width: 100%;
         background-image: url(../../assets/banner.webp);
     }
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 992px) {
     .bannerslogan {
         padding-left: 10px;
         padding-bottom: 10px;
         font-size: 58px;
     }
     .btncontain {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 20px;
         width: 450px;
         top: 0;
-        margin: 0 auto
     }
     .banner {
         height: 600px;
+        width: 100%;
         background-image: url(../../assets/banner.webp);
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1200px) {
+    .bannerslogan {
+        padding-left: 10px;
+        padding-bottom: 10px;
+        font-size: 64px;
+    }
+    .btncontain {
+        width: 500px;
+        top: 0;
+    }
+    .banner {
+        height: 650px;
+        background-image: url(../../assets/banner.webp);
+    }
+}
+
+@media only screen and (min-width: 1366px) {
     .bannerslogan {
         padding-left: 10px;
         padding-bottom: 10px;
@@ -141,7 +128,10 @@
         margin: 0 auto
     }
     .banner {
-        height: 600px;
+        height: 650px;
+        width: 1366px;
+        border-radius: 5px;
+        margin-top: 10px;
         background-image: url(../../assets/banner.webp);
     }
 }

@@ -27,3 +27,52 @@
     color: white;
     background: black
 }
+
+@media only screen and (max-width: 320px) {
+    .navimglink {
+        width: 250px;
+        height: 250px
+    }
+}
+
+@media only screen and (min-width: 321px) {
+    .navimglink {
+        width: 300px;
+        height: 300px
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .navimglink {
+        width: 350px;
+        height: 350px
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .navimglink {
+        width: 300px;
+        height: 300px
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .navimglink {
+        width: 400px;
+        height: 400px
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .navimglink {
+        width: 450px;
+        height: 450px
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .navimglink {
+        width: 300px;
+        height: 300px
+    }
+}
