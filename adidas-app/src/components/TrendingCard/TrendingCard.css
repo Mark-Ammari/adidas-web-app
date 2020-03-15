@@ -3,6 +3,10 @@
     border-radius: 5px;
 }
 
+.trendingcard a {
+    text-decoration: none;
+}
+
 .trendingcard:hover {
     opacity: 0.75;
 }

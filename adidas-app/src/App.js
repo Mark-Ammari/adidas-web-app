@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
-import Men from './components/Pages/Men/Men';
+import ProductListContainer from './components/Pages/ProductListContainer/ProductListContainer';
 import { useDispatch, useSelector } from 'react-redux'
 import * as linksAction from './store/actions/links'
 import * as trendingAction from './store/actions/trending';
-
 import Landingpage from './components/Pages/Landingpage/Landingpage';
 import Footer from './components/Footer/Footer';
+import ProductInfoContainer from './components/Pages/ProductInfoContainer/ProductInfoContainer';
 
 function App() {
   const dispatch = useDispatch()
@@ -27,12 +27,10 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/" component={Landingpage} />
-            <Route path="/men" component={Men}></Route>
-            <Route path="/women"></Route>
-            <Route path="/kids"></Route>
-            <Route path="/sports"></Route>
+            <Route path="/:query" component={ProductListContainer} />
           </Switch>
-          <Footer />
+          <Route path="/:productName/:id" component={ProductInfoContainer} />
+          {/* <Footer /> */}
         </BrowserRouter>
       </>
     );

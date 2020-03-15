@@ -1,5 +1,4 @@
 .btncontainer {
-    width: 125px;
     height: 25px;
     padding: 10px;
     background-color: black;
@@ -13,8 +12,9 @@
     font-size: 10pt;
     font-weight: bold;
     position: relative;
-    margin: 1em;
+    margin: 5px;
     cursor: pointer;
+    border-radius: 3px;
     font-family: AdihausDIN,Helvetica,Arial,sans-serif;
 }
 
@@ -22,13 +22,9 @@
     color: grey
 }
 
-.btn {
-    width: 125px;
-    height: 25px;
-    padding: 10px;
-    border: 1px solid black;
-    transform: translate(3px,3px);
-    position: absolute;
-    top: 0;
-    left: 0
+.btntext {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

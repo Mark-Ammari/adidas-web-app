@@ -8,12 +8,16 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import linksReducer from './store/reducers/links';
 import trendingReducer from './store/reducers/trending';
+import productListReducer from './store/reducers/productList';
+import searchProductReducer from './store/reducers/searchProduct';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducter = combineReducers({
     linksData: linksReducer,
-    trendingList: trendingReducer
+    trendingList: trendingReducer,
+    productList: productListReducer,
+    searchProduct: searchProductReducer
 })
 
 const store = createStore(rootReducter, composeEnhancers(applyMiddleware(thunk)))

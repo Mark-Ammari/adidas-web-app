@@ -1,0 +1,9 @@
+.productinfoformcontrol {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.productinfoform {
+    width: 100%;
+}
