@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import "./ProductInfoGallery.css";
-import { useState } from "react";
-import { useMediaQuery } from '@material-ui/core';
+import React from 'react';
+import "./ProductInfoSpecs.css";
+import {
+    useMediaQuery,
+} from '@material-ui/core';
 
-const ProductInfoSpecs = props => {
-    const breakpoint = useMediaQuery('(min-width:768px)')
+const ProductInfoSpecs = () => {
+    // const breakpoint = useMediaQuery('(min-width:768px)')
     return (
-        <div className="productinfospecs">
-            
-        </div>
-    );
+        <div>hi</div>
+    )
 };
 
-export default ProductInfoGallery;
+export default ProductInfoSpecs;

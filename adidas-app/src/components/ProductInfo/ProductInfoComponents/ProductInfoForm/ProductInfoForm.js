@@ -11,7 +11,7 @@ import { Typography } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
     formControl: {
         margin: theme.spacing(1),
-        minWidth: "35%",
+        width: "50%",
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -70,7 +70,7 @@ const ProductInfoForm = props => {
                     </Select>
                 </FormControl>
             </div>
-            <AdiBtn width="70%">Add to Bag</AdiBtn>
+            <AdiBtn width="calc(100% - 30px)">Add to Bag</AdiBtn>
             <Typography className={classes.margin} variant="subtitle1" color="textPrimary" component="h5" gutterBottom color="textSecondary">{props.search["product_description"].text}</Typography>
         </div>
     );

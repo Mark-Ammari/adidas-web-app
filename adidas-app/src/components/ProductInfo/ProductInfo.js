@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import './ProductInfo.css';
 import { useSelector } from 'react-redux';
-import { Typography } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
+import { Typography, IconButton, TextField } from '@material-ui/core';
+import { ArrowRight, ArrowLeft } from '@material-ui/icons';
 import ProductInfoMainImg from './ProductInfoComponents/ProductInfoMainImg/ProductInfoMainImg';
 import ProductInfoDescription from './ProductInfoComponents/ProductInfoDescription/ProductInfoDescription';
 import ProductInfoForm from './ProductInfoComponents/ProductInfoForm/ProductInfoForm';
 import TrendingCard from '../TrendingCard/TrendingCard';
+import NavBreadcrumbs from '../NavBreadcrumbs/NavBreadcrumbs';
+import ProductInfoSpecs from './ProductInfoComponents/ProductInfoSpecs/ProductInfoSpecs';
 
 const ProductInfo = (props) => {
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
@@ -45,7 +49,7 @@ const ProductInfo = (props) => {
                         </div>
                     </div>
                     <div>
-                        {searchProduct["product_link_list"].filter(extra => extra.type === "complete-the-look").length > 1 ?
+                    {searchProduct["product_link_list"].filter(extra => extra.type === "complete-the-look").length > 1 ?
                             <>
                                 <Typography align="center" variant="h4">Complete The Look</Typography>
                                 <div className="completethelook">
@@ -56,7 +60,7 @@ const ProductInfo = (props) => {
                             </>
                             : null
                         }
-
+                        <ProductInfoSpecs />
                     </div>
                 </>
             }
