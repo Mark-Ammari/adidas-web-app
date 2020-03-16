@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ProductInfoSpecsDesktop.css';
 import SwipeableViews from 'react-swipeable-views';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -41,11 +42,16 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: 900,
+    margin: "auto",
+    marginTop: "20px",
   },
+  indicator: {
+    background: "black"
+  }
 }));
 
-const ProductInfoSpecsDesktop = () => {
+const ProductInfoSpecsDesktop = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -62,16 +68,17 @@ const ProductInfoSpecsDesktop = () => {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Tabs
+          TabIndicatorProps={{ style: { background: "#OOO" } }}
+          classes={{ indicator: classes.indicator }}
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
-          textColor="primary"
+          textColor="inherit"
           variant="fullWidth"
-          aria-label="full width tabs example"
+          aria-label="Information Tabs"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label={<span>Description</span>} {...a11yProps(0)} />
+          <Tab label={<span>Specifications</span>} {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -80,10 +87,26 @@ const ProductInfoSpecsDesktop = () => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Description
+          <div className="productinfospecsdesktopdescription">
+            <div>
+                <Typography variant="h4" gutterBottom>{props.producttitle}</Typography>
+                <Typography variant="h5" gutterBottom>{props.subtitle}</Typography>
+                <Typography variant="subtitle1" gutterBottom>{props.description}</Typography>
+            </div>
+            <div>
+                <img src={props.src} alt="Product Media" />
+            </div>
+          </div>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Specifications
+        <div className="productinfospecsdesktopdescription">
+            <div>
+                <ul>{props.sectone}</ul>
+            </div>
+            <div>
+                <ul>{props.secttwo}</ul>
+            </div>
+          </div>
         </TabPanel>
       </SwipeableViews>
     </div>

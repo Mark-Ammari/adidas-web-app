@@ -1,0 +1,15 @@
+.productinfospecsdesktopdescription {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.productinfospecsdesktopdescription div{
+    width: 400px;
+    height: auto
+}
+
+.productinfospecsdesktopdescription img{
+    width: 400px;
+    height: auto
+}
