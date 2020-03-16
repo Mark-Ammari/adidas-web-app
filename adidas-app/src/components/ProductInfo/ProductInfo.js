@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductInfo.css';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { Typography, IconButton, TextField } from '@material-ui/core';
-import { ArrowRight, ArrowLeft } from '@material-ui/icons';
+import { Typography } from '@material-ui/core';
 import ProductInfoMainImg from './ProductInfoComponents/ProductInfoMainImg/ProductInfoMainImg';
 import ProductInfoDescription from './ProductInfoComponents/ProductInfoDescription/ProductInfoDescription';
 import ProductInfoForm from './ProductInfoComponents/ProductInfoForm/ProductInfoForm';
 import TrendingCard from '../TrendingCard/TrendingCard';
-import NavBreadcrumbs from '../NavBreadcrumbs/NavBreadcrumbs';
-import ProductInfoSpecs from './ProductInfoComponents/ProductInfoSpecs/ProductInfoSpecs';
+import TrendingBar from '../TrendingBar/TrendingBar';
+import ProductInfoSpecsMobile from './ProductInfoComponents/ProductInfoSpecsMobile/ProductInfoSpecsMobile';
 
 const ProductInfo = (props) => {
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
@@ -31,7 +29,7 @@ const ProductInfo = (props) => {
                 <>
                     <div className="productinfo">
                         <div className="productinfoimages">
-                            <ProductInfoMainImg search={searchProduct} stacleft={stacLeft} stacright={stacRight} pointer={pointer} />
+                            <ProductInfoMainImg search={searchProduct["view_list"][pointer]["image_url"]} stacleft={stacLeft} stacright={stacRight} pointer={pointer} />
                             <div className="productinfogallery">
                                 {searchProduct["view_list"].map((img, key) => {
                                     return <div><img style={{
@@ -49,9 +47,9 @@ const ProductInfo = (props) => {
                         </div>
                     </div>
                     <div>
-                    {searchProduct["product_link_list"].filter(extra => extra.type === "complete-the-look").length > 1 ?
+                        {searchProduct["product_link_list"].filter(extra => extra.type === "complete-the-look").length >= 1 ?
                             <>
-                                <Typography align="center" variant="h4">Complete The Look</Typography>
+                                <Typography style={{marginTop: "10px"}} align="center" variant="h4">Complete The Look</Typography>
                                 <div className="completethelook">
                                     {searchProduct["product_link_list"].filter(extra => extra.type === "complete-the-look").map((item, key) => {
                                         return <TrendingCard key={key} img={item["image"]} name={item.name} id={item.productId} price={'$' + item["pricing_information"]["standard_price"]} />
@@ -60,7 +58,20 @@ const ProductInfo = (props) => {
                             </>
                             : null
                         }
-                        <ProductInfoSpecs />
+                        <Typography style={{marginTop: "10px"}} align="center" variant="h4">Product Information</Typography>
+                        <ProductInfoSpecsMobile
+                            text={searchProduct["product_description"].text}
+                            producttitle={searchProduct["product_description"].title}
+                            src={searchProduct["product_description"]["description_assets"]["image_url"]}>Description</ProductInfoSpecsMobile>
+                        <ProductInfoSpecsMobile
+                            specs={
+                                searchProduct["product_description"]["usps"].map((bullet, key) => {
+                                    return <li key={key}><Typography gutterBottom>{bullet}</Typography></li>
+                                })
+                            }>
+                            Specifications
+                        </ProductInfoSpecsMobile>
+                        <TrendingBar />
                     </div>
                 </>
             }

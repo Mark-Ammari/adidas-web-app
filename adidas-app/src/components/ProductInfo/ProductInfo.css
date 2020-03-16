@@ -6,7 +6,7 @@
 .completethelook {
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .productinfoimages {
@@ -14,14 +14,14 @@
 }
 
 .productinfogallery {
-    display: flex !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    width: 100% !important;
-    overflow-x: scroll !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    flex-wrap: nowrap !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+    position: absolute;
+    bottom: 0;
+    flex-wrap: nowrap;
 }
 
 .productinfogallery img {

@@ -30,7 +30,7 @@ function App() {
             <Route path="/:query" component={ProductListContainer} />
           </Switch>
           <Route path="/:productName/:id" component={ProductInfoContainer} />
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </>
     );

@@ -71,7 +71,7 @@ const ProductInfoForm = props => {
                 </FormControl>
             </div>
             <AdiBtn width="calc(100% - 30px)">Add to Bag</AdiBtn>
-            <Typography className={classes.margin} variant="subtitle1" color="textPrimary" component="h5" gutterBottom color="textSecondary">{props.search["product_description"].text}</Typography>
+            <Typography className={classes.margin} variant="subtitle1" component="h5" gutterBottom color="textSecondary">{props.search["product_description"].text}</Typography>
         </div>
     );
 };

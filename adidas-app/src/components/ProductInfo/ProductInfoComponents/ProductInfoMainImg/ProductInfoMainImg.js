@@ -8,7 +8,7 @@ const ProductInfoMainImg = props => {
         <div className="productinfomainimg">
             <div 
             style={{ 
-                backgroundImage: `url(${props.search["view_list"][props.pointer]["image_url"]})` 
+                backgroundImage: `url(${props.search})` 
             }} 
             className="productinfoimagecontainer"
             >
