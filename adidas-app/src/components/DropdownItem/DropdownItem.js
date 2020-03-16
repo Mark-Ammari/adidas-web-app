@@ -6,10 +6,10 @@ const dropdownItem = (props) => {
     return (
         <div className="dropdown">
             <NavLink
-            className="navlink"
+            className="navlink dropbtn"
             activeStyle={{
             }}
-            to={"/" + props.name} className="dropbtn">{props.name}</NavLink>
+            to={"/" + props.name}>{props.name}</NavLink>
             <div className="dropdown-content">
                 {props.children}
             </div>

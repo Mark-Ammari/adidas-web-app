@@ -1,5 +1,4 @@
 import * as actionTypes from '../actions/actionTypes';
-import React from 'react';
 
 const initialState = {
     menData: {},

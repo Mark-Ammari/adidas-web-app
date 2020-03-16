@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './Footer.css';
 import github from '../../assets/github.svg';
 import sourcecode from '../../assets/sourcecode.svg';

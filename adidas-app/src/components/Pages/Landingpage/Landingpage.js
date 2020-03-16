@@ -1,7 +1,5 @@
 import React from 'react';
 import './Landingpage.css';
-import AdiBtn from '../../AdiBtn/AdiBtn';
-import { Typography } from '@material-ui/core';
 import TrendingBar from '../../TrendingBar/TrendingBar';
 import AboutUs from '../../AboutUs/AboutUs';
 import NavImgLinkSection from '../../NavImgLinkSection/NavImgLinkSection';

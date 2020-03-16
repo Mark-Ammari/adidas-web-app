@@ -9,12 +9,16 @@ import TrendingCard from '../TrendingCard/TrendingCard';
 import TrendingBar from '../TrendingBar/TrendingBar';
 import ProductInfoSpecsMobile from './ProductInfoComponents/ProductInfoSpecsMobile/ProductInfoSpecsMobile';
 import ProductInfoSpecsDesktop from './ProductInfoComponents/ProductInfoSpecsDesktop/ProductInfoSpecsDesktop';
+import usePrevious from '../../hooks/usePrevious';
 
 const ProductInfo = (props) => {
     const breakpoint = useMediaQuery('(min-width:992px)');
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
     const loading = useSelector(state => state.searchProduct.loading)
     let [pointer, setPointer] = useState(0)
+
+    let [match, setMatch] = useState(props.match)
+    let previous = usePrevious(pointer)
 
     const stacRight = () => {
         if (pointer >= searchProduct["view_list"].length - 1) {
@@ -27,19 +31,26 @@ const ProductInfo = (props) => {
         } else { setPointer(pointer -= 1) }
     }
 
+    useEffect(() => {
+        setMatch(props.match)
+        if (previous !== match) {
+            setPointer(0)
+        }
+    }, [previous, match, props.match])
+
     return (
         <div>
             {loading ? null :
                 <>
                     <div className="productinfo">
                         <div className="productinfoimages">
-                            <ProductInfoMainImg search={searchProduct["view_list"][pointer]["image_url"]} stacleft={stacLeft} stacright={stacRight} pointer={pointer} />
+                            <ProductInfoMainImg search={searchProduct["view_list"][pointer]["image_url"]} stacleft={stacLeft} stacright={stacRight} />
                             <div className="productinfogallery">
                                 {searchProduct["view_list"].map((img, key) => {
-                                    return <div><img style={{
+                                    return <div key={key}><img style={{
                                         width: "100px",
                                         height: "100px"
-                                    }} key={key} onClick={() => { setPointer(key) }} src={img["image_url"]} alt="product gallery" />
+                                    }} onClick={() => { setPointer(key) }} src={img["image_url"]} alt="product gallery" />
                                     </div>
                                 })}
                             </div>
@@ -71,10 +82,10 @@ const ProductInfo = (props) => {
                                 subtitle={searchProduct["product_description"].subtitle}
                                 producttitle={searchProduct["product_description"].title}
                                 src={searchProduct["product_description"]["description_assets"]["image_url"]}
-                                sectone={searchProduct["product_description"].usps.slice(0, Math.ceil(searchProduct["product_description"].usps.length/2)).map((bullet, key) => {
+                                sectone={searchProduct["product_description"].usps.slice(0, Math.ceil(searchProduct["product_description"].usps.length / 2)).map((bullet, key) => {
                                     return <li key={key}><Typography gutterBottom>{bullet}</Typography></li>
                                 })}
-                                secttwo={searchProduct["product_description"].usps.slice(Math.ceil(searchProduct["product_description"].usps.length/2)).map((bullet, key) => {
+                                secttwo={searchProduct["product_description"].usps.slice(Math.ceil(searchProduct["product_description"].usps.length / 2)).map((bullet, key) => {
                                     return <li key={key}><Typography gutterBottom>{bullet}</Typography></li>
                                 })}
                             />

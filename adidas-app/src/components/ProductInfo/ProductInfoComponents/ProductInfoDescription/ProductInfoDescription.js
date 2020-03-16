@@ -12,7 +12,7 @@ const ProductInfoDescription = props => {
                 <Typography color="textSecondary" variant="h6" component="h6">{props.search["attribute_list"].brand}</Typography>
                 <Typography variant="h5" component="h5" gutterBottom>{props.search.name}</Typography>
                 <Typography variant="h5" color="textPrimary" component="h5" >Available Colors</Typography>
-                <Typography variant="h6" color="textPrimary" component="h5" gutterBottom color="textSecondary">{props.search["attribute_list"].color}</Typography>
+                <Typography variant="h6" color="textPrimary" component="h5" gutterBottom >{props.search["attribute_list"].color}</Typography>
                 <div className="colorvariationlinks">
                     {props.search["product_link_list"].filter(type => type.type === "color-variation").map((colorVariation, key) => {
                         return <NavLink key={key} to={`/${colorVariation.name}/${colorVariation.productId}`}><img src={colorVariation.image} alt="product color" /></NavLink>

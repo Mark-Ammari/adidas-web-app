@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.css';
 import Logo from '../Logo/Logo';
-import DropdownItem from '../DropdownItem/DropdownItem';
 import Navbar from '../Navbar/Navbar';
 import { NavLink } from 'react-router-dom';
 

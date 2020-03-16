@@ -8,7 +8,6 @@ import * as productListAction from '../../../store/actions/productList';
 const ProductListContainer = (props) => {
     const dispatch = useDispatch()
     const history = useHistory()
-    console.log("productlist page")
     let pathName = history.location.pathname.slice(1)
     useEffect(() => {
         dispatch(productListAction.fetchProductList("us", pathName))

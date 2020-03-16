@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './AdiBtn.css';
 import { ArrowRightAltRounded } from '@material-ui/icons'
 import { useHistory } from 'react-router-dom'

@@ -3,8 +3,7 @@ import './Navbar.css';
 import DropdownItem from '../DropdownItem/DropdownItem';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { ShoppingCartRounded } from '@material-ui/icons';
-import { IconButton } from '@material-ui/core'
+
 const Navbar = () => {
     const menData = useSelector(state => state.linksData.menData)
     const loading = useSelector(state => state.linksData.loading)
