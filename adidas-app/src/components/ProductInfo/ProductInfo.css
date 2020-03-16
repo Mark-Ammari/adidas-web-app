@@ -16,9 +16,10 @@
 .productinfogallery {
     display: flex;
     justify-content: flex-start;
+    margin-top: 20px;
     align-items: center;
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
     position: absolute;
     bottom: 0;
     flex-wrap: nowrap;
@@ -27,6 +28,7 @@
 .productinfogallery img {
     margin: 5px;
     width: 100%;
+    opacity: 0.25;;
     border-radius: 5px;
 }
 

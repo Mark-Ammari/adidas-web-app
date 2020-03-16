@@ -64,7 +64,7 @@ const ProductInfo = (props) => {
                             : null
                         }
 
-                        <Typography style={{ marginTop: "10px" }} align="center" variant="h4">Product Information</Typography>
+                        <Typography style={{ marginTop: "10px" }} align="center" variant="h4">Product Details</Typography>
                         {breakpoint ?
                             <ProductInfoSpecsDesktop
                                 description={searchProduct["product_description"].text}

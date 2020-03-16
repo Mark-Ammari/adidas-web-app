@@ -1,16 +1,16 @@
 .productinfoimagecontainer {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
 
 .staccontainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 500px;
+    height: calc(100vh - 144px);
 }
 
 @media only screen and (max-width: 320px) {
@@ -22,21 +22,15 @@
 }
 
 @media only screen and (min-width: 600px) {
-    .staccontainer {
-        height: 600px;
-    }
+  
 }
 
 @media only screen and (min-width: 768px) {
-    .staccontainer {
-        height: 600px;
-    }
+   
 }
 
 @media only screen and (min-width: 992px) {
-    .staccontainer {
-        height: 700px;
-    }
+    
 }
 
 @media only screen and (min-width: 1200px) {
