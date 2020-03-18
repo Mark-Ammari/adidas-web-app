@@ -5,11 +5,12 @@
 }
 
 .productinfospecsdesktopdescription div{
-    width: 400px;
-    height: auto
+    width: 100%;
+    height: auto;
+    margin-right: 1em;
 }
 
 .productinfospecsdesktopdescription img{
-    width: 400px;
+    width: 100%;
     height: auto
 }

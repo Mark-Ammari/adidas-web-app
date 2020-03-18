@@ -3,22 +3,46 @@ import "./ProductInfoDescription.css";
 import { Typography } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import NavBreadcrumbs from '../../../NavBreadcrumbs/NavBreadcrumbs';
+import { useSelector } from 'react-redux';
+import Ratings from '../../../Ratings/Ratings';
 
 const ProductInfoDescription = props => {
+    const searchProduct = useSelector(state => state.searchProduct.searchProduct)
+    let sale = null
+
+    if (searchProduct["pricing_information"]["standard_price"] > searchProduct["pricing_information"].currentPrice) {
+        sale = <div className="saleprice">
+            <span style={{
+                color: "red",
+                marginRight: "20px"
+            }}>{`$${searchProduct["pricing_information"].currentPrice}`}</span>
+            <span style={{
+                textDecoration: "line-through"
+            }}>{`$${searchProduct["pricing_information"]["standard_price"]}`}</span>
+        </div>
+    } else {
+        sale = <span className="standardprice">{`$${searchProduct["pricing_information"]["standard_price"]}`}</span>
+    }
+
     return (
         <div className="productinfodescription">
             <div className="productInfocontainer">
-                <NavBreadcrumbs absolutepath={props.search["breadcrumb_list"][0].link.slice(3)} absolutepathtext={props.search["breadcrumb_list"][0].text} relativepath={props.search["breadcrumb_list"][1].link.slice(3)} relativepathtext={props.search["breadcrumb_list"][1].text} />
-                <Typography color="textSecondary" variant="h6" component="h6">{props.search["attribute_list"].brand}</Typography>
-                <Typography variant="h5" component="h5" gutterBottom>{props.search.name}</Typography>
+                <NavBreadcrumbs
+                    absolutepath={searchProduct["breadcrumb_list"][0].link.slice(3)}
+                    absolutepathtext={searchProduct["breadcrumb_list"][0].text}
+                    relativepath={searchProduct["breadcrumb_list"][1].link.slice(3)}
+                    relativepathtext={searchProduct["breadcrumb_list"][1].text} />
+                <Ratings />
+                <Typography color="textSecondary" variant="h6" component="h6">{searchProduct["attribute_list"].brand}</Typography>
+                <Typography variant="h5" component="h5" gutterBottom>{searchProduct.name}</Typography>
                 <Typography variant="h5" color="textPrimary" component="h5" >Available Colors</Typography>
-                <Typography variant="h6" color="textPrimary" component="h5" gutterBottom >{props.search["attribute_list"].color}</Typography>
+                <Typography variant="h6" color="textPrimary" component="h5" gutterBottom >{searchProduct["attribute_list"].color}</Typography>
                 <div className="colorvariationlinks">
-                    {props.search["product_link_list"].filter(type => type.type === "color-variation").map((colorVariation, key) => {
+                    {searchProduct["product_link_list"].filter(type => type.type === "color-variation").map((colorVariation, key) => {
                         return <NavLink key={key} to={`/${colorVariation.name}/${colorVariation.productId}`}><img src={colorVariation.image} alt="product color" /></NavLink>
                     })}
                 </div>
-                <Typography variant="subtitle1" gutterBottom>{`$${props.search["pricing_information"].currentPrice}`}</Typography>
+                {sale}
             </div>
         </div>
     );

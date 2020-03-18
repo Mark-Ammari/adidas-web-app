@@ -25,4 +25,12 @@ router.get('/search/:id', (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.get('/sizes/:id', (req, res) => {
+    axios.get(`https://www.adidas.com/api/products/${req.params.id}/availability?sitePath=us`)
+    .then(resp => {
+        res.send(parse(stringify(resp.data)))
+    })
+    .catch(err => console.log(err))
+})
+
 module.exports = router

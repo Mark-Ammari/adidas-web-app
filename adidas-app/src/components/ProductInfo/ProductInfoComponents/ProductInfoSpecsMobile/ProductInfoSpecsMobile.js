@@ -10,6 +10,7 @@ import {
     Slide
 } from '@material-ui/core';
 import { ChevronLeftRounded, ArrowRightAltRounded } from '@material-ui/icons';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
     appBar: {
@@ -35,6 +36,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const ProductInfoSpecsMobile = (props) => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
+    let detailType = null
+
+    const searchProduct = useSelector(state => state.searchProduct.searchProduct)
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -43,6 +47,45 @@ const ProductInfoSpecsMobile = (props) => {
     const handleClose = () => {
         setOpen(false);
     };
+
+    switch (props.type) {
+        case "description":
+            detailType = (
+                searchProduct.hasOwnProperty("product_description") ? <>
+                    <div className="productinfospecsmobileimg">
+                        <img src={searchProduct["product_description"]["description_assets"]["image_url"]} alt="product_media" />
+                    </div>
+
+                    <Typography variant="h4" color="textPrimary">{searchProduct["product_description"].title}</Typography>
+                    <Typography variant="subtitle1" color="textPrimary">{searchProduct["product_description"].text}</Typography>
+                </> : null
+            )
+            break;
+        case "specifications":
+            detailType = (searchProduct.hasOwnProperty("product_description") && searchProduct["product_description"].hasOwnProperty("usps") ?
+                <>
+                    <ul>
+                        {searchProduct["product_description"]["usps"].map((bullet, key) => {
+                            return <li key={key}><Typography gutterBottom>{bullet}</Typography></li>
+                        })}
+                    </ul>
+                </> : null)
+            break;
+        case "hightlights":
+            detailType = (searchProduct.hasOwnProperty("product_description") && searchProduct["product_description"].hasOwnProperty("product_highlights") ?
+                <>
+                    {searchProduct["product_description"]["product_highlights"].map((bullet, key) => {
+                        return <div key={key}>
+                            <Typography variant="h5" gutterBottom>{bullet.headline}</Typography>
+                            <Typography variant="subtitle1" gutterBottom>{bullet.copy}</Typography>
+                        </div>
+                    })
+                    }
+                </> : null)
+            break;
+        default: detailType = null
+            break;
+    }
 
     return (
         <div className="productinfospecsmobile">
@@ -59,20 +102,7 @@ const ProductInfoSpecsMobile = (props) => {
                         <Typography variant="h6" color="textPrimary" className={classes.title}>{props.children}</Typography>
                     </Toolbar>
                 </AppBar>
-
-                {props.children === "Description" ?
-                    <div className="productinfospecsmobileimg">
-                        <img src={props.src} alt="product_media" />
-                    </div>
-                    :
-                    null
-                }
-                <Typography variant="h4" color="textPrimary">{props.producttitle}</Typography>
-                <Typography variant="subtitle1" color="textPrimary">{props.text}</Typography>
-                <ul>
-                    {props.specs}
-                </ul>
-                {props.highlights}
+                {detailType}
             </Dialog>
         </div>
     );

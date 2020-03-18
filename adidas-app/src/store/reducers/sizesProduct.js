@@ -1,24 +1,23 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    searchProduct: {},
     sizesProduct: {},
     loading: true
 }
 
-const searchProductReducer = (state = initialState, action) => {
+const sizesProductReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.FETCH_SEARCH_PRODUCT_START:
+        case actionTypes.FETCH_SIZES_PRODUCT_START:
             return {
                 ...state,
                 loading: true
             }
-        case actionTypes.FETCH_SEARCH_PRODUCT_SUCCESS:
+        case actionTypes.FETCH_SIZES_PRODUCT_SUCCESS:
             return {
-                searchProduct: action.searchProduct,
+                sizesProduct: action.sizesProduct,
                 loading: false
             }
-        case actionTypes.FETCH_SEARCH_PRODUCT_FAIL:
+        case actionTypes.FETCH_SIZES_PRODUCT_FAIL:
             return {
                 ...state,
                 loading: false
@@ -27,4 +26,4 @@ const searchProductReducer = (state = initialState, action) => {
     };
 };
 
-export default searchProductReducer;
+export default sizesProductReducer;

@@ -1,15 +1,12 @@
-.colorvariationlinks {
-
-}
-
-.colorvariationlinks a img{
+.colorvariationlinks a img {
     width: 75px;
     height: 75px;
     margin: 7px 7px 7px 0;
     border-radius: 50%;
     transition: 0.5ms ease-in-out;
 }
-.colorvariationlinks a img:hover{
+
+.colorvariationlinks a img:hover {
     transform: scale(1.05);
 }
 

@@ -47,18 +47,20 @@ const ProductInfo = (props) => {
                             <ProductInfoMainImg search={searchProduct["view_list"][pointer]["image_url"]} stacleft={stacLeft} stacright={stacRight} />
                             <div className="productinfogallery">
                                 {searchProduct["view_list"].map((img, key) => {
-                                    return <div key={key}><img style={{
+                                    return <div key={key}><img 
+                                    onClick={() => { setPointer(key) }}
+                                    style={{
                                         width: "100px",
-                                        height: "100px"
-                                    }} onClick={() => { setPointer(key) }} src={img["image_url"]} alt="product gallery" />
+                                        height: "100px",
+                                    }} src={img["image_url"]} alt="product gallery" />
                                     </div>
                                 })}
                             </div>
                         </div>
 
                         <div>
-                            <ProductInfoDescription search={searchProduct} />
-                            <ProductInfoForm search={searchProduct} />
+                            <ProductInfoDescription />
+                            <ProductInfoForm />
                         </div>
                     </div>
                     <div>
@@ -76,32 +78,20 @@ const ProductInfo = (props) => {
                         }
 
                         <Typography style={{ marginTop: "10px" }} align="center" variant="h4">Product Details</Typography>
-                        {breakpoint ?
-                            <ProductInfoSpecsDesktop
-                                description={searchProduct["product_description"].text}
-                                subtitle={searchProduct["product_description"].subtitle}
-                                producttitle={searchProduct["product_description"].title}
-                                src={searchProduct["product_description"]["description_assets"]["image_url"]}
-                                sectone={searchProduct["product_description"].usps.slice(0, Math.ceil(searchProduct["product_description"].usps.length / 2)).map((bullet, key) => {
-                                    return <li key={key}><Typography gutterBottom>{bullet}</Typography></li>
-                                })}
-                                secttwo={searchProduct["product_description"].usps.slice(Math.ceil(searchProduct["product_description"].usps.length / 2)).map((bullet, key) => {
-                                    return <li key={key}><Typography gutterBottom>{bullet}</Typography></li>
-                                })}
-                            />
-                            : <>
-                                <ProductInfoSpecsMobile
-                                    text={searchProduct["product_description"].text}
-                                    producttitle={searchProduct["product_description"].title}
-                                    src={searchProduct["product_description"]["description_assets"]["image_url"]}>Description</ProductInfoSpecsMobile>
-                                <ProductInfoSpecsMobile
-                                    specs={
-                                        searchProduct["product_description"]["usps"].map((bullet, key) => {
-                                            return <li key={key}><Typography gutterBottom>{bullet}</Typography></li>
-                                        })
-                                    }>
-                                    Specifications
-                        </ProductInfoSpecsMobile>
+                        {breakpoint ? <ProductInfoSpecsDesktop /> :
+                            <>
+                                {searchProduct.hasOwnProperty("product_description") ?
+                                    <ProductInfoSpecsMobile type="description">Description</ProductInfoSpecsMobile> :
+                                    null
+                                }
+                                {searchProduct.hasOwnProperty("product_description") && searchProduct["product_description"].hasOwnProperty("usps") ?
+                                    <ProductInfoSpecsMobile type="specifications">Specifications</ProductInfoSpecsMobile> :
+                                    null
+                                }
+                                {searchProduct.hasOwnProperty("product_description") && searchProduct["product_description"].hasOwnProperty("product_highlights") ?
+                                    <ProductInfoSpecsMobile type="hightlights">Highlights</ProductInfoSpecsMobile> :
+                                    null
+                                }
                             </>
                         }
 
