@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const adidas = require('./routes/api/adidas');
 const trending = require('./routes/api/trending');
 const productlist = require('./routes/api/productlist');
+const models = require('./routes/api/models');
 
 const PORT = process.env.port || 5000;
 const server = express();
@@ -22,8 +23,9 @@ mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log("MongoDB Connected"))
 .catch((err) => console.log(err))
 
-server.use('/api/adidas', adidas)
-server.use('/api/trending', trending)
-server.use('/api/productlist', productlist)
+server.use('/api/adidas', adidas);
+server.use('/api/trending', trending);
+server.use('/api/productlist', productlist);
+server.use('/api/models', models);
 
 server.listen(PORT, () => console.log(`Listening in port: ${PORT}`))

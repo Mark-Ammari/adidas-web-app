@@ -10,6 +10,7 @@ import TrendingBar from '../TrendingBar/TrendingBar';
 import ProductInfoSpecsMobile from './ProductInfoComponents/ProductInfoSpecsMobile/ProductInfoSpecsMobile';
 import ProductInfoSpecsDesktop from './ProductInfoComponents/ProductInfoSpecsDesktop/ProductInfoSpecsDesktop';
 import usePrevious from '../../hooks/usePrevious';
+import ProductInfoRatingsAndReviews from './ProductInfoRatingAndReviews/ProductInfoRatingsAndReviews';
 
 const ProductInfo = (props) => {
     const breakpoint = useMediaQuery('(min-width:992px)');
@@ -18,7 +19,7 @@ const ProductInfo = (props) => {
     let [pointer, setPointer] = useState(0)
 
     let [match, setMatch] = useState(props.match)
-    let previous = usePrevious(pointer)
+    let previous = usePrevious(match)
 
     const stacRight = () => {
         if (pointer >= searchProduct["view_list"].length - 1) {
@@ -47,12 +48,12 @@ const ProductInfo = (props) => {
                             <ProductInfoMainImg search={searchProduct["view_list"][pointer]["image_url"]} stacleft={stacLeft} stacright={stacRight} />
                             <div className="productinfogallery">
                                 {searchProduct["view_list"].map((img, key) => {
-                                    return <div key={key}><img 
-                                    onClick={() => { setPointer(key) }}
-                                    style={{
-                                        width: "100px",
-                                        height: "100px",
-                                    }} src={img["image_url"]} alt="product gallery" />
+                                    return <div key={key}><img
+                                        onClick={() => { setPointer(key) }}
+                                        style={{
+                                            width: "100px",
+                                            height: "100px",
+                                        }} src={img["image_url"]} alt="product gallery" />
                                     </div>
                                 })}
                             </div>
@@ -94,7 +95,7 @@ const ProductInfo = (props) => {
                                 }
                             </>
                         }
-
+                        <ProductInfoRatingsAndReviews />
                         <TrendingBar />
                     </div>
                 </>

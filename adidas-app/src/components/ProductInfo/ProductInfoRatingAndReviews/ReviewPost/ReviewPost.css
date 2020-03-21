@@ -1,0 +1,11 @@
+.reviewpost {
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.reviewposttopbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -11,6 +11,7 @@ import trendingReducer from './store/reducers/trending';
 import productListReducer from './store/reducers/productList';
 import searchProductReducer from './store/reducers/searchProduct';
 import sizesProductReducer from './store/reducers/sizesProduct';
+import ratingsAndReviewsReducer from './store/reducers/ratingsAndReviews';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -19,7 +20,8 @@ const rootReducter = combineReducers({
     trendingList: trendingReducer,
     productList: productListReducer,
     searchProduct: searchProductReducer,
-    sizesProduct: sizesProductReducer
+    sizesProduct: sizesProductReducer,
+    ratingsAndReviews: ratingsAndReviewsReducer
 })
 
 const store = createStore(rootReducter, composeEnhancers(applyMiddleware(thunk)))

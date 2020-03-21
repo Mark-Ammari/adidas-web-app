@@ -1,0 +1,21 @@
+.ratingbreakdown {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto
+}
+
+.skillbar {
+    width: 100%; /* Full width */
+    background-color: #767677; /* Grey background */
+    border-radius: 10px;
+}
+
+.bar {
+    text-align: right; /* Right-align text */
+    padding-top: 3px; /* Add top padding */
+    padding-bottom: 3px; /* Add bottom padding */
+    /* width: 90%;  */
+    border-radius: 10px;
+    background-color: #2ada71
+}

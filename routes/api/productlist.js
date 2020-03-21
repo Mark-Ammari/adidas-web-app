@@ -22,7 +22,7 @@ router.get('/search/:id', (req, res) => {
     .then(resp => {
         res.send(parse(stringify(resp.data)))
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err.data))
 })
 
 router.get('/sizes/:id', (req, res) => {
@@ -30,7 +30,7 @@ router.get('/sizes/:id', (req, res) => {
     .then(resp => {
         res.send(parse(stringify(resp.data)))
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err.data))
 })
 
 module.exports = router

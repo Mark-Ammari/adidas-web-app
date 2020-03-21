@@ -51,7 +51,6 @@ const ProductInfoForm = props => {
                             value={size}
                         >
                             <option value="" />
-                            {console.log(sizesProduct["variation_list"])}
                             {sizesProduct["variation_list"].map((size, key) => {
                                 if (size["availability_status"] === "IN_STOCK") {
                                     return <option key={key} value={size.size}>{size.size}</option>
