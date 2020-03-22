@@ -2,7 +2,7 @@ import React from 'react';
 import './TrendingBar.css';
 import { useSelector } from 'react-redux';
 import TrendingCard from '../TrendingCard/TrendingCard';
-import { Typography } from '@material-ui/core';
+import { Typography, ListItemSecondaryAction } from '@material-ui/core';
 
 const TrendingBar = (props) => {
     const trendingList = useSelector(state => state.trendingList.trendingList)
@@ -14,8 +14,8 @@ const TrendingBar = (props) => {
             </div>
             <div className="trendingbar">
                 {loading ? null :
-                    trendingList.map((item, key) => {
-                        return <TrendingCard key={key} img={item["image-url"]} name={item.name} division={item.division} id={item.article} price={'$'+item["current-price"]} />
+                    trendingList.items.map((item, key) => {
+                        return <TrendingCard key={key} query={item.model} img={item["image-url"]} name={item.name} division={item.division} id={item.article} price={'$'+item["current-price"]} />
                     })}
             </div>
         </>

@@ -1,6 +1,6 @@
 import React from 'react';
-import StarRatingComponent from 'react-star-rating-component'
-import { makeStyles } from '@material-ui/core/styles';
+import Rating from '@material-ui/lab/Rating';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -8,11 +8,18 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const StyledRating = withStyles({
+  iconFilled: {
+    color: '#000',
+  },
+  
+})(Rating);
+
 export default function Ratings(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <StarRatingComponent editing={false} name="ratings" {...props} />
+      <StyledRating size="small" readOnly name="rating" defaultValue={props.value} />
     </div>
   );
 }

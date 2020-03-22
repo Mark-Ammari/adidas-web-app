@@ -2,6 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     searchProduct: {},
+    getModelNumber: "",
     loading: true
 }
 
@@ -15,6 +16,7 @@ const searchProductReducer = (state = initialState, action) => {
         case actionTypes.FETCH_SEARCH_PRODUCT_SUCCESS:
             return {
                 searchProduct: action.searchProduct,
+                getModelNumber: action.getModelNumber,
                 loading: false
             }
         case actionTypes.FETCH_SEARCH_PRODUCT_FAIL:

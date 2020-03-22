@@ -26,7 +26,7 @@ export const fetchTrending = () => {
         base.get('/api/trending')
         .then(res => {
             // console.log(res.data.items)
-            dispatch(fetchTrendingSuccess(res.data.items))
+            dispatch(fetchTrendingSuccess(res.data))
         })
         .catch(err => {
             console.log(err)

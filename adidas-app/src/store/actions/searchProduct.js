@@ -13,10 +13,11 @@ export const fetchProductSearchFail = () => {
     };
 };
 
-export const fetchProductSearchSuccess = (searchProduct) => {
+export const fetchProductSearchSuccess = (searchProduct, getModelNumber) => {
     return {
         type: actionTypes.FETCH_SEARCH_PRODUCT_SUCCESS,
-        searchProduct: searchProduct
+        searchProduct: searchProduct,
+        getModelNumber: getModelNumber,
     };
 };
 
@@ -26,7 +27,7 @@ export const fetchProductSearch = (searchProduct) => {
         base.get(`/api/productlist/search/${searchProduct}`, )
         .then(res => {
             // console.log(res.data)
-            dispatch(fetchProductSearchSuccess(res.data))
+            dispatch(fetchProductSearchSuccess(res.data, res.data["model_number"]))
         })
         .catch(err => {
             console.log(err.data)

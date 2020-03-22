@@ -10,7 +10,7 @@ const ProductList = () => {
         <div className="productlist">
             {loading ? null :
                 productlist.map((item, key) => {
-                    return <TrendingCard id={item.productId} key={key} img={item.image.src} name={item.displayName} division={item.division} />
+                    return <TrendingCard query={item.modelId} id={item.productId} key={key} img={item.image.src} name={item.displayName} division={item.division} />
                 })
             }
         </div>

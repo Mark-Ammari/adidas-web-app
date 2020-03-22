@@ -6,7 +6,10 @@ import { NavLink } from 'react-router-dom';
 const TrendingCard = (props) => {
     return (
         <div className="trendingcard">
-            <NavLink to={`/${props.name}/${props.id}`}>
+            <NavLink to={{
+                pathname: `/${props.name}/${props.id}`,
+                search: `?model=${props.query}`
+            }}>
                 <img src={props.img} alt="trending" />
                 <Typography variant="subtitle2" color="textSecondary">{props.division}</Typography>
                 <div className="margin">

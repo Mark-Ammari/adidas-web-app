@@ -1,15 +1,15 @@
 import React from 'react';
 import "./ProductInfoDescription.css";
 import { Typography } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import NavBreadcrumbs from '../../../NavBreadcrumbs/NavBreadcrumbs';
 import { useSelector } from 'react-redux';
 import Ratings from '../../../Ratings/Ratings';
 
 const ProductInfoDescription = props => {
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
+    const history = useHistory()
     let sale = null
-
     if (searchProduct["pricing_information"]["standard_price"] > searchProduct["pricing_information"].currentPrice) {
         sale = <div className="saleprice">
             <span style={{
@@ -37,9 +37,13 @@ const ProductInfoDescription = props => {
                 <Typography variant="h5" component="h5" gutterBottom>{searchProduct.name}</Typography>
                 <Typography variant="h5" color="textPrimary" component="h5" >Available Colors</Typography>
                 <Typography variant="h6" color="textPrimary" component="h5" gutterBottom >{searchProduct["attribute_list"].color}</Typography>
+
                 <div className="colorvariationlinks">
                     {searchProduct["product_link_list"].filter(type => type.type === "color-variation").map((colorVariation, key) => {
-                        return <NavLink key={key} to={`/${colorVariation.name}/${colorVariation.productId}`}><img src={colorVariation.image} alt="product color" /></NavLink>
+                        return <NavLink key={key} to={{
+                            pathname: `/${colorVariation.name}/${colorVariation.productId}`,
+                            search: `${history.location.search}`
+                        }}><img src={colorVariation.image} alt="product color" /></NavLink>
                     })}
                 </div>
                 {sale}
