@@ -1,21 +1,35 @@
 .ratingbreakdown {
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    margin: auto
+    width: 500px;
+    padding: 3px 0px;
+    margin: auto;
 }
 
 .skillbar {
-    width: 100%; /* Full width */
-    background-color: #767677; /* Grey background */
+    width: 100%;
+    /* Full width */
+    background-color: #767677;
+    /* Grey background */
     border-radius: 10px;
 }
 
+.ratings {
+    width: 59px;
+    margin-right: 5px;
+}
+
 .bar {
-    text-align: right; /* Right-align text */
-    padding-top: 3px; /* Add top padding */
-    padding-bottom: 3px; /* Add bottom padding */
+    padding: 2px 0px;
     /* width: 90%;  */
     border-radius: 10px;
     background-color: #2ada71
 }
+
+@media only screen and (max-width: 500px) {
+    .ratingbreakdown {
+        width: 100%;
+    }
+}
+

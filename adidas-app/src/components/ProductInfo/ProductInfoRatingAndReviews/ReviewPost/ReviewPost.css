@@ -1,6 +1,8 @@
 .reviewpost {
     padding: 10px;
     border-bottom: 1px solid black;
+    max-width: 750px;
+    margin: auto
 }
 
 .reviewposttopbar {

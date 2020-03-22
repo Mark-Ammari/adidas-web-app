@@ -68,7 +68,7 @@ const ProductInfo = (props) => {
 
                         {searchProduct["product_link_list"].filter(extra => extra.type === "complete-the-look").length >= 1 ?
                             <>
-                                <Typography style={{ marginTop: "10px" }} align="center" variant="h4">Complete The Look</Typography>
+                                <Typography style={{ marginTop: "10px" }} align="center" variant="h4"><strong>Complete The Look</strong></Typography>
                                 <div className="completethelook">
                                     {searchProduct["product_link_list"].filter(extra => extra.type === "complete-the-look").map((item, key) => {
                                         return <TrendingCard key={key} img={item["image"]} name={item.name} id={item.productId} price={'$' + item["pricing_information"]["standard_price"]} />
@@ -78,7 +78,7 @@ const ProductInfo = (props) => {
                             : null
                         }
 
-                        <Typography style={{ marginTop: "10px" }} align="center" variant="h4">Product Details</Typography>
+                        <Typography style={{ marginTop: "10px" }} align="center" variant="h4"><strong>Product Details</strong></Typography>
                         {breakpoint ? <ProductInfoSpecsDesktop /> :
                             <>
                                 {searchProduct.hasOwnProperty("product_description") ?

@@ -10,7 +10,7 @@ const TrendingBar = (props) => {
     return (
         <>
             <div className="trendingtitle">
-                <Typography variant="h4">What's Trending</Typography>
+                <Typography variant="h4"><strong>What's Trending</strong></Typography>
             </div>
             <div className="trendingbar">
                 {loading ? null :

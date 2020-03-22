@@ -11,36 +11,42 @@ const ProductInfoRatingsAndReviews = (props) => {
     const getReviews = useSelector(state => state.ratingsAndReviews.reviewsProduct)
     const loadingRatingsAndReviews = useSelector(state => state.ratingsAndReviews.loading)
     if (loadingRatingsAndReviews || !getReviews.reviews || !getRatings.ratingDistribution) {
-        console.log(getReviews.review, getRatings.ratingDistribution)
         return null
     } else {
-        console.log(getReviews.review, getRatings.ratingDistribution)
         return (
             <div className="productinforatingsandreviews">
-                <Typography variant="h5" gutterBottom><strong>Ratings &amp; Reviews</strong></Typography>
+                {getRatings.overallRating && getRatings.recommendationPercentage && getRatings.ratingDistribution.length > 0 && getReviews.reviews.length > 0 ?
+                    <Typography variant="h4" align="center" gutterBottom><strong>Ratings &amp; Reviews</strong></Typography>
+                    :
+                    <Typography variant="h4" align="center" gutterBottom><strong>No Ratings &amp; Reviews</strong></Typography>
+                }
                 <div className="ratingsstats">
-                    <div className="ratingsbox">
-                        <Typography variant="h4" gutterBottom>{getRatings.overallRating}</Typography>
-                        <Ratings value={getRatings.overallRating} />
-                        <Typography variant="subtitle1"><strong>{getRatings.reviewCount}</strong> Reviews</Typography>
-                    </div>
+
+                    {getRatings.overallRating ?
+                        <div className="ratingsbox">
+                            <Typography variant="h4" gutterBottom>{getRatings.overallRating}</Typography>
+                            <Ratings value={getRatings.overallRating} />
+                            <Typography variant="subtitle1"><strong>{getRatings.reviewCount}</strong> Reviews</Typography>
+                        </div>
+                        :
+                        null
+                    }
+
                     {getRatings.recommendationPercentage ?
                         <div className="recommendationbox">
                             <Typography variant="h4" ><strong>{`%${getRatings.recommendationPercentage}`}</strong></Typography>
                             <Typography variant="subtitle1">of customers recommend this product</Typography>
                         </div>
                         :
-                        <div className="recommendationbox">
-                            <Typography variant="h4" ><strong>0%</strong></Typography>
-                            <Typography variant="subtitle1">of customers recommend this product</Typography>
-                        </div>
+                        null
                     }
+
                 </div>
                 <div>
-                    {getRatings.ratingDistribution.length > 0 ?
+                    {getRatings.reviewCount ?
                         getRatings.ratingDistribution.map((rating, key) => {
-                            console.log((rating.count / (getRatings.ratingDistribution[0].count + getRatings.ratingDistribution[1].count + getRatings.ratingDistribution[2].count + getRatings.ratingDistribution[3].count + getRatings.ratingDistribution[4].count)) * 100)
                             return <RatingBreakdown
+                                rating={`${rating.rating}`}
                                 width={`${(rating.count / (getRatings.ratingDistribution[0].count + getRatings.ratingDistribution[1].count + getRatings.ratingDistribution[2].count + getRatings.ratingDistribution[3].count + getRatings.ratingDistribution[4].count)) * 100 || 0}%`}
                                 key={key}
                                 value={rating.count} />
@@ -49,7 +55,7 @@ const ProductInfoRatingsAndReviews = (props) => {
                         null
                     }
                 </div>
-                <div>
+                <div className="reviews">
                     {getReviews.reviews.length > 0 ?
                         getReviews.reviews.map((post, key) => {
                             return <ReviewPost

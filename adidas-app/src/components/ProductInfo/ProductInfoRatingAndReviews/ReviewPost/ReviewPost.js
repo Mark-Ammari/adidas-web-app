@@ -22,7 +22,7 @@ const ReviewPost = (props) => {
                 <Ratings {...props} />
                 <Typography variant="subtitle2" color="textSecondary" >{props.date}</Typography>
             </div>
-            <Typography className={[classes.root, classes.uppercase].join(' ')} gutterBottom variant="h5">{props.title}</Typography>
+            <Typography className={[classes.root, classes.uppercase].join(' ')} gutterBottom variant="h6">{props.title}</Typography>
             <Typography gutterBottom variant="subtitle1">{props.comment}</Typography>
             {props.isRecommended ?
                 <Typography gutterBottom variant="subtitle1" color="textSecondary"><Check fontSize="small" />I recommend this product</Typography>
