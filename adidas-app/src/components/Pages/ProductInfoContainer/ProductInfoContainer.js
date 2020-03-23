@@ -8,13 +8,17 @@ import ProductInfo from '../../ProductInfo/ProductInfo';
 
 const ProductInfoContainer = (props) => {
     const dispatch = useDispatch()
-    
+    const loadMore = useSelector(state => state.ratingsAndReviews.loadMore)
+    const offsetBy = useSelector(state => state.ratingsAndReviews.offsetBy)
     useEffect(() => {
         dispatch(searchProductAction.fetchProductSearch(props.match.params.id))
         dispatch(sizesProductAction.fetchProductSizes(props.match.params.id))
-        dispatch(ratingsAndReviewsAction.fetchReviews(props.location.search.slice(7)))
         dispatch(ratingsAndReviewsAction.fetchRatings(props.location.search.slice(7)))
     }, [dispatch, props.match.params.id, props.location.search]);
+
+    // useEffect(() => {
+    //     dispatch(ratingsAndReviewsAction.fetchReviews(props.location.search.slice(7), loadMore+2))
+    // }, [dispatch, props.match.params.id, loadMore])
     return (
         <div>
             <ProductInfo match={props.match.params.id} />

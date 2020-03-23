@@ -9,6 +9,7 @@ import Ratings from '../../../Ratings/Ratings';
 const ProductInfoDescription = props => {
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
     const history = useHistory()
+    const getRatings = useSelector(state => state.ratingsAndReviews.ratingsProduct)
     let sale = null
     if (searchProduct["pricing_information"]["standard_price"] > searchProduct["pricing_information"].currentPrice) {
         sale = <div className="saleprice">
@@ -32,7 +33,14 @@ const ProductInfoDescription = props => {
                     absolutepathtext={searchProduct["breadcrumb_list"][0].text}
                     relativepath={searchProduct["breadcrumb_list"][1].link.slice(3)}
                     relativepathtext={searchProduct["breadcrumb_list"][1].text} />
-                <Ratings />
+                {Object.keys(getRatings).length > 0 ?
+                    <div className="jumptoreviews">
+                        <Ratings value={getRatings.overallRating} />
+                        <a href="#reviews">Read All {getRatings.reviewCount} Reviews</a>
+                    </div>
+                    : null
+                }
+
                 <Typography color="textSecondary" variant="h6" component="h6">{searchProduct["attribute_list"].brand}</Typography>
                 <Typography variant="h5" component="h5" gutterBottom>{searchProduct.name}</Typography>
                 <Typography variant="h5" color="textPrimary" component="h5" >Available Colors</Typography>

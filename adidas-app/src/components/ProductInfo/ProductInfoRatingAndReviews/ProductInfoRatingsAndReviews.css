@@ -21,10 +21,25 @@
     margin-left: 10px;
     width: 250px
 }
+.loadmorebtn {
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 3px;
+    text-align: center;
+}
+
+.loadmorebtn span:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 2px;
+}
 
 @media only screen and (min-width: 992px) {
     .ratingreviews {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
     }
 }

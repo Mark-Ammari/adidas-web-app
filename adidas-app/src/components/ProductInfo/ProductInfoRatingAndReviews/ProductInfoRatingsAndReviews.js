@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductInfoRatingsAndReviews.css';
 import { Typography } from '@material-ui/core';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Ratings from '../../Ratings/Ratings'
+import * as ratingsAndReviewsAction from '../../../store/actions/ratingsAndReviews';
 import RatingBreakdown from './RatingBreakdown/RatingBreakdown';
 import ReviewPost from './ReviewPost/ReviewPost';
+import { useHistory } from 'react-router-dom';
 
 const ProductInfoRatingsAndReviews = (props) => {
+
+    const history = useHistory()
+
     const getRatings = useSelector(state => state.ratingsAndReviews.ratingsProduct)
     const getReviews = useSelector(state => state.ratingsAndReviews.reviewsProduct)
+    const [loadMore, setLoadMore] = useState(2)
     const loadingRatingsAndReviews = useSelector(state => state.ratingsAndReviews.loading)
     
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(ratingsAndReviewsAction.fetchReviews(history.location.search.slice(7), loadMore))
+    }, [dispatch, history])
+
+    const LoadFiveMoreHandler = () => {
+        setLoadMore(loadMore + 2)
+    }
+
     if (loadingRatingsAndReviews || !getReviews.reviews || !getRatings.ratingDistribution) {
         return null
     } else {
         return (
-            <div className="productinforatingsandreviews">
+            <div id="reviews" className="productinforatingsandreviews">
                 {getRatings.overallRating && getRatings.recommendationPercentage && getRatings.ratingDistribution.length > 0 && getReviews.reviews.length > 0 ?
                     <Typography variant="h4" align="center" gutterBottom><strong>Ratings &amp; Reviews</strong></Typography>
                     :
@@ -61,7 +77,7 @@ const ProductInfoRatingsAndReviews = (props) => {
                     </div>
                     <div className="reviews">
                         {getReviews.reviews.length > 0 ?
-                            getReviews.reviews.map((post, key) => {
+                            getReviews.reviews.slice(0, loadMore-2).map((post, key) => {
                                 return <ReviewPost
                                     key={key}
                                     value={post.rating}
@@ -74,6 +90,7 @@ const ProductInfoRatingsAndReviews = (props) => {
                             })
                             : null
                         }
+                        <div onClick={LoadFiveMoreHandler} className="loadmorebtn"><span>LOAD MORE</span></div>
                     </div>
                 </div>
             </div>

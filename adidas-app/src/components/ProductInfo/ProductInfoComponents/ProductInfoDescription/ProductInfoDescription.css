@@ -13,3 +13,23 @@
 .productInfocontainer {
     padding-left: 10px;
 }
+
+.jumptoreviews {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.jumptoreviews a {
+   color: black;
+   padding: 3px 0;
+   text-decoration: none;
+}
+
+.jumptoreviews a:hover {
+    color: white;
+    background-color: black;
+    text-decoration: underline;
+    border-radius: 5px;
+ }

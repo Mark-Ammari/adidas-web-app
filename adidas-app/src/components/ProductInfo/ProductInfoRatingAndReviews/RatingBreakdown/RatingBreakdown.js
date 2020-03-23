@@ -3,13 +3,7 @@ import './RatingBreakdown.css';
 import { Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-    root: {
-        marginLeft: "5px"
-    },
-    root2: {
-        marginRight: "5px",
-        width: "52px"
-    }
+
 });
 
 const RatingBreakdown = props => {
@@ -20,7 +14,7 @@ const RatingBreakdown = props => {
             <div className="skillbar">
                 <div style={{ width: props.width }} className="bar"></div>
             </div>
-            <Typography className={classes.root} color="textSecondary" variant="subtitle2" >{props.value}</Typography>
+            <div className="count"><Typography color="textSecondary" variant="subtitle2" >{props.value}</Typography></div>
         </div>
     );
 };

@@ -3,7 +3,8 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     ratingsProduct: {},
     reviewsProduct: {},
-    // sortBy: "",
+    loadMore: 4,
+    offsetBy: 0,
     loading: true,
 }
 
@@ -34,12 +35,18 @@ const ratingsAndReviewsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                reviewsProduct: action.reviewsProduct
+                reviewsProduct: action.reviewsProduct,
             }
         case actionTypes.FETCH_REVIEWS_PRODUCT_FAIL:
             return {
                 ...state,
                 loading: false,
+            }
+        case actionTypes.ADD_FIVE:
+            return {
+                ...state,
+                loadMore: state.loadMore + 2,
+                offsetBy: state.offsetBy + 2
             }
         default: return state;
     }

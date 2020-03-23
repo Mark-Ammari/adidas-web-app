@@ -1,20 +1,20 @@
 import * as actionTypes from './actionTypes';
 import base from '../../URL/URL';
 
-export const fetchRatingsStart = () => {
+const fetchRatingsStart = () => {
     return {
         type: actionTypes.FETCH_RATINGS_PRODUCT_START
     }
 }
 
-export const fetchRatingsSuccess = (ratingsProduct) => {
+const fetchRatingsSuccess = (ratingsProduct) => {
     return {
         type: actionTypes.FETCH_RATINGS_PRODUCT_SUCCESS,
         ratingsProduct: ratingsProduct
     }
 }
 
-export const fetchRatingsFail = () => {
+const fetchRatingsFail = () => {
     return {
         type: actionTypes.FETCH_RATINGS_PRODUCT_FAIL
     }
@@ -24,45 +24,59 @@ export const fetchRatings = (id) => {
     return dispatch => {
         dispatch(fetchRatingsStart());
         base.get(`/api/models/ratings/${id}`)
-        .then(res => {
-            dispatch(fetchRatingsSuccess(res.data))
-        })
-        .catch(err => console.log(err.data))
+            .then(res => {
+                dispatch(fetchRatingsSuccess(res.data))
+            })
+            .catch(err => dispatch(fetchRatingsFail(err)))
     }
 }
 
-export const fetchReviewsStart = () => {
+const fetchReviewsStart = () => {
     return {
         type: actionTypes.FETCH_REVIEWS_PRODUCT_START
     }
 }
 
-export const fetchReviewsSuccess = (reviewsProduct) => {
+const fetchReviewsSuccess = (reviewsProduct) => {
     return {
         type: actionTypes.FETCH_REVIEWS_PRODUCT_SUCCESS,
         reviewsProduct: reviewsProduct,
     }
 }
 
-export const fetchReviewsFail = () => {
+const fetchReviewsFail = () => {
     return {
         type: actionTypes.FETCH_REVIEWS_PRODUCT_FAIL
     }
 }
 
-export const fetchReviews = (id, sort, offset, limit) => {
+export const fetchReviews = (id, limit = 2, offset = 0, sort = "newest", ) => {
     return dispatch => {
         dispatch(fetchReviewsStart());
-        base.get(`/api/models/reviews/${id}`, { params: {
-            sort: sort="newest",
-            offset: offset=0,
-            limit: limit=5
-        }})
-        .then(res => {
-            dispatch(fetchReviewsSuccess(res.data))
+        base.get(`/api/models/reviews/${id}`, {
+            params: {
+                limit: limit,
+                offset: offset,
+                sort: sort,
+            }
         })
-        .catch(err => {
-            dispatch(fetchReviewsFail(err.data))
-        })
+            .then(res => {
+                dispatch(fetchReviewsSuccess(res.data))
+            })
+            .catch(err => {
+                dispatch(fetchReviewsFail(err.data))
+            })
+    }
+}
+
+const addFive = () => {
+    return {
+        type: actionTypes.ADD_FIVE
+    }
+}
+
+export const addFiveMore = () => {
+    return dispatch => {
+        dispatch(addFive())
     }
 }
