@@ -34,53 +34,52 @@ const ProductInfoForm = props => {
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
     const sizesProduct = useSelector(state => state.sizesProduct.sizesProduct)
     const loading = useSelector(state => state.sizesProduct.loading)
-    
+
     let [size, setSize] = useState('')
     let [quantity, setQuantity] = useState(1)
 
     return (
-        < div className="productinfoform" >
-            {loading ? null : <>
-                <div className="productinfoformcontrol">
-                    <FormControl className={classes.formControl}>
-                        <InputLabel style={{ color: "#767677" }} htmlFor="age-native-simple">Select Size</InputLabel>
-                        <Select
-                            className={classes.select}
-                            native
-                            onChange={(e) => {setSize(e.target.value)}}
-                            value={size}
-                        >
-                            <option value="" />
-                            {sizesProduct["variation_list"].map((size, key) => {
+        <div className="productinfoform" >
+            <div className="productinfoformcontrol">
+                <FormControl className={classes.formControl}>
+                    <InputLabel style={{ color: "#767677" }} htmlFor="age-native-simple">Select Size</InputLabel>
+                    <Select
+                        className={classes.select}
+                        native
+                        onChange={(e) => { setSize(e.target.value) }}
+                        value={size}
+                    >
+                        <option value="" />
+
+                        {loading ? null :
+                            sizesProduct["variation_list"].map((size, key) => {
                                 if (size["availability_status"] === "IN_STOCK") {
                                     return <option key={key} value={size.size}>{size.size}</option>
                                 } else {
-                                    return null
+                                    return <option disabled key={key} value={size.size}>{size.size}</option>
                                 }
                             })}
-                        </Select>
-                    </FormControl>
-                    <FormControl className={classes.formControl}>
-                        <InputLabel style={{ color: "#767677" }} htmlFor="quantity-native-simple">Quantity</InputLabel>
-                        <Select
-                            className={classes.select}
-                            native
-                            onChange={(e) => {setQuantity(e.target.value)}}
-                            value={quantity}
-                        >
-                            <option value={1}>1</option>
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
-                            <option value={4}>4</option>
-                            <option value={5}>5</option>
-                        </Select>
-                    </FormControl>
-                </div>
-                <AdiBtn width="calc(100% - 30px)">Add to Bag</AdiBtn>
-                <Typography className={classes.margin} variant="subtitle1" component="h5" gutterBottom color="textSecondary">{searchProduct["product_description"].text}</Typography>
-            </>
-            }
-        </div >
+                    </Select>
+                </FormControl>
+                <FormControl className={classes.formControl}>
+                    <InputLabel style={{ color: "#767677" }} htmlFor="quantity-native-simple">Quantity</InputLabel>
+                    <Select
+                        className={classes.select}
+                        native
+                        onChange={(e) => { setQuantity(e.target.value) }}
+                        value={quantity}
+                    >
+                        <option value={1}>1</option>
+                        <option value={2}>2</option>
+                        <option value={3}>3</option>
+                        <option value={4}>4</option>
+                        <option value={5}>5</option>
+                    </Select>
+                </FormControl>
+            </div>
+            <AdiBtn width="calc(100% - 30px)">Add to Bag</AdiBtn>
+            <Typography className={classes.margin} variant="subtitle1" component="h5" gutterBottom color="textSecondary">{searchProduct["product_description"].text}</Typography>
+        </div>
     );
 };
 

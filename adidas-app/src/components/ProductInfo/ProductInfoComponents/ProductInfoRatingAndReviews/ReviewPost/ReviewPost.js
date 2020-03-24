@@ -2,7 +2,7 @@ import React from 'react';
 import './ReviewPost.css';
 import { Typography, makeStyles } from '@material-ui/core';
 import { Check } from '@material-ui/icons';
-import Ratings from '../../../Ratings/Ratings';
+import Ratings from '../../../../Ratings/Ratings';
 
 const useStyles = makeStyles({
     root: {
@@ -12,6 +12,7 @@ const useStyles = makeStyles({
         textTransform: "uppercase"
     }
 });
+
 
 const ReviewPost = (props) => {
     const classes = useStyles()
@@ -31,7 +32,7 @@ const ReviewPost = (props) => {
             }
             <Typography className={classes.root} gutterBottom variant="subtitle1">{props.username}</Typography>
         </div>
-    );
+    )
 };
 
 export default ReviewPost;

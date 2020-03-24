@@ -1,16 +1,16 @@
 .productinfoimagecontainer {
     background-position: center;
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: cover;
     height: 100%;
-    width: 100vw;
+    width: 100%;
 }
 
 .staccontainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: calc(100vh - 144px);
+    height: calc(100vh);
 }
 
 @media only screen and (max-width: 320px) {

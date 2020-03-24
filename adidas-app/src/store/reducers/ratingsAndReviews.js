@@ -3,8 +3,8 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     ratingsProduct: {},
     reviewsProduct: {},
-    loadMore: 4,
-    offsetBy: 0,
+    reviewList: [],
+    distributionList: [],
     loading: true,
 }
 
@@ -19,7 +19,8 @@ const ratingsAndReviewsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                ratingsProduct: action.ratingsProduct
+                ratingsProduct: action.ratingsProduct,
+                distributionList: action.distributionList
             }
         case actionTypes.FETCH_RATINGS_PRODUCT_FAIL:
             return {
@@ -36,17 +37,12 @@ const ratingsAndReviewsReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 reviewsProduct: action.reviewsProduct,
+                reviewList: action.reviewList
             }
         case actionTypes.FETCH_REVIEWS_PRODUCT_FAIL:
             return {
                 ...state,
                 loading: false,
-            }
-        case actionTypes.ADD_FIVE:
-            return {
-                ...state,
-                loadMore: state.loadMore + 2,
-                offsetBy: state.offsetBy + 2
             }
         default: return state;
     }

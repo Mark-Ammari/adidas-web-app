@@ -5,17 +5,18 @@ import { Typography, useMediaQuery } from '@material-ui/core';
 import ProductInfoMainImg from './ProductInfoComponents/ProductInfoMainImg/ProductInfoMainImg';
 import ProductInfoDescription from './ProductInfoComponents/ProductInfoDescription/ProductInfoDescription';
 import ProductInfoForm from './ProductInfoComponents/ProductInfoForm/ProductInfoForm';
-import TrendingCard from '../TrendingCard/TrendingCard';
 import TrendingBar from '../TrendingBar/TrendingBar';
 import ProductInfoSpecsMobile from './ProductInfoComponents/ProductInfoSpecsMobile/ProductInfoSpecsMobile';
 import ProductInfoSpecsDesktop from './ProductInfoComponents/ProductInfoSpecsDesktop/ProductInfoSpecsDesktop';
 import usePrevious from '../../hooks/usePrevious';
-import ProductInfoRatingsAndReviews from './ProductInfoRatingAndReviews/ProductInfoRatingsAndReviews';
+import ProductInfoRatingsAndReviews from './ProductInfoComponents/ProductInfoRatingAndReviews/ProductInfoRatingsAndReviews';
 
 const ProductInfo = (props) => {
     const breakpoint = useMediaQuery('(min-width:992px)');
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
     const loading = useSelector(state => state.searchProduct.loading)
+    const loadingRatingsAndReviews = useSelector(state => state.ratingsAndReviews.loading)
+
     let [pointer, setPointer] = useState(0)
 
     let [match, setMatch] = useState(props.match)
@@ -82,7 +83,8 @@ const ProductInfo = (props) => {
                                 }
                             </>
                         }
-                        <ProductInfoRatingsAndReviews />
+                        {/* onClick={props.onClick} */}
+                        <ProductInfoRatingsAndReviews  />
                         <TrendingBar />
                     </div>
                 </>

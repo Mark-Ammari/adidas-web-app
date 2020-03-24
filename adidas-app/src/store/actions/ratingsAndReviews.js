@@ -7,10 +7,11 @@ const fetchRatingsStart = () => {
     }
 }
 
-const fetchRatingsSuccess = (ratingsProduct) => {
+const fetchRatingsSuccess = (ratingsProduct, distributionList) => {
     return {
         type: actionTypes.FETCH_RATINGS_PRODUCT_SUCCESS,
-        ratingsProduct: ratingsProduct
+        ratingsProduct: ratingsProduct,
+        distributionList: distributionList
     }
 }
 
@@ -25,7 +26,7 @@ export const fetchRatings = (id) => {
         dispatch(fetchRatingsStart());
         base.get(`/api/models/ratings/${id}`)
             .then(res => {
-                dispatch(fetchRatingsSuccess(res.data))
+                dispatch(fetchRatingsSuccess(res.data, res.data.ratingDistribution))
             })
             .catch(err => dispatch(fetchRatingsFail(err)))
     }
@@ -37,10 +38,11 @@ const fetchReviewsStart = () => {
     }
 }
 
-const fetchReviewsSuccess = (reviewsProduct) => {
+const fetchReviewsSuccess = (reviewsProduct, reviewList) => {
     return {
         type: actionTypes.FETCH_REVIEWS_PRODUCT_SUCCESS,
         reviewsProduct: reviewsProduct,
+        reviewList: reviewList
     }
 }
 
@@ -61,7 +63,7 @@ export const fetchReviews = (id, limit = 2, offset = 0, sort = "newest", ) => {
             }
         })
             .then(res => {
-                dispatch(fetchReviewsSuccess(res.data))
+                dispatch(fetchReviewsSuccess(res.data, res.data.reviews))
             })
             .catch(err => {
                 dispatch(fetchReviewsFail(err.data))

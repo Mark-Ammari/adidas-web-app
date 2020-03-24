@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductInfoContainer.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as searchProductAction from '../../../store/actions/searchProduct';
 import * as sizesProductAction from '../../../store/actions/sizesProduct';
 import * as ratingsAndReviewsAction from '../../../store/actions/ratingsAndReviews';
@@ -8,8 +8,8 @@ import ProductInfo from '../../ProductInfo/ProductInfo';
 
 const ProductInfoContainer = (props) => {
     const dispatch = useDispatch()
-    const loadMore = useSelector(state => state.ratingsAndReviews.loadMore)
-    const offsetBy = useSelector(state => state.ratingsAndReviews.offsetBy)
+    // const [loadMore, setLoadMore] = useState(2)
+
     useEffect(() => {
         dispatch(searchProductAction.fetchProductSearch(props.match.params.id))
         dispatch(sizesProductAction.fetchProductSizes(props.match.params.id))
@@ -17,10 +17,12 @@ const ProductInfoContainer = (props) => {
     }, [dispatch, props.match.params.id, props.location.search]);
 
     // useEffect(() => {
-    //     dispatch(ratingsAndReviewsAction.fetchReviews(props.location.search.slice(7), loadMore+2))
-    // }, [dispatch, props.match.params.id, loadMore])
+    //     dispatch(ratingsAndReviewsAction.fetchReviews(props.location.search.slice(7), loadMore))
+    // }, [dispatch, props.location.search, loadMore])
+    
     return (
         <div>
+            {/* onClick={() => {setLoadMore(loadMore + 2)}} */}
             <ProductInfo match={props.match.params.id} />
         </div>
     )
