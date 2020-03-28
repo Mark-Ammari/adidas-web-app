@@ -1,19 +1,19 @@
 import * as actionTypes from './actionTypes';
 import base from '../../URL/URL';
 
-export const fetchProductSearchStart = () => {
+const fetchProductSearchStart = () => {
     return {
         type: actionTypes.FETCH_SEARCH_PRODUCT_START
     };
 };
 
-export const fetchProductSearchFail = () => {
+const fetchProductSearchFail = () => {
     return {
         type: actionTypes.FETCH_SEARCH_PRODUCT_FAIL
     };
 };
 
-export const fetchProductSearchSuccess = (searchProduct, getModelNumber) => {
+const fetchProductSearchSuccess = (searchProduct, getModelNumber) => {
     return {
         type: actionTypes.FETCH_SEARCH_PRODUCT_SUCCESS,
         searchProduct: searchProduct,

@@ -49,7 +49,7 @@ const ProductInfoDescription = props => {
                 <div className="colorvariationlinks">
                     {searchProduct["product_link_list"].filter(type => type.type === "color-variation").map((colorVariation, key) => {
                         return <NavLink key={key} to={{
-                            pathname: `/${colorVariation.name}/${colorVariation.productId}`,
+                            pathname: `/${colorVariation.name.split(' ').join('-').split('/').join('-')}/${colorVariation.productId}`,
                             search: `${history.location.search}`
                         }}><img src={colorVariation.image} alt="product color" /></NavLink>
                     })}

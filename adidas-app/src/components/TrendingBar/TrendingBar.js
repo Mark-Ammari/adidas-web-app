@@ -15,7 +15,7 @@ const TrendingBar = (props) => {
             <div className="trendingbar">
                 {loading ? null :
                     trendingList.items.map((item, key) => {
-                        return <TrendingCard key={key} query={item.model} img={item["image-url"]} name={item.name} division={item.division} id={item.article} price={'$'+item["current-price"]} />
+                        return <TrendingCard key={key} query={item.model} img={item["image-url"]} name={item.name} nameuri={item.name.split(' ').join('-').split('/').join('-')} division={item.division} id={item.article} price={'$'+item["current-price"]} />
                     })}
             </div>
         </>

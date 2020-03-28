@@ -27,7 +27,7 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/" component={Landingpage} />
-            <Route path="/:query" component={ProductListContainer} />
+            <Route exact path="/:query" component={ProductListContainer} />
           </Switch>
           <Route path="/:productName/:id" component={ProductInfoContainer} />
           <Footer />

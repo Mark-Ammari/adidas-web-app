@@ -30,7 +30,7 @@ export const fetchProductList = (sitePath="us", query, start, sort) => {
             sort: sort
         }})
         .then(res => {
-            dispatch(fetchProductListSuccess(res.data.itemList))
+            dispatch(fetchProductListSuccess(res.data.itemList.items))
         })
         .catch(err => {
             console.log(err)

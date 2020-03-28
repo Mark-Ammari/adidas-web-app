@@ -7,7 +7,7 @@ const TrendingCard = (props) => {
     return (
         <div className="trendingcard">
             <NavLink to={{
-                pathname: `/${props.name}/${props.id}`,
+                pathname: `/${props.nameuri}/${props.id}`,
                 search: `?model=${props.query}`
             }}>
                 <img src={props.img} alt="trending" />

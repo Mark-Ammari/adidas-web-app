@@ -15,7 +15,6 @@ const ProductInfo = (props) => {
     const breakpoint = useMediaQuery('(min-width:992px)');
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
     const loading = useSelector(state => state.searchProduct.loading)
-    const loadingRatingsAndReviews = useSelector(state => state.ratingsAndReviews.loading)
 
     let [pointer, setPointer] = useState(0)
 

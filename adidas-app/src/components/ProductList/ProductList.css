@@ -1,5 +1,7 @@
 .productlist {
+    max-width: 1366px;
     display: flex;
+    margin: auto;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;

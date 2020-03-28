@@ -70,15 +70,3 @@ export const fetchReviews = (id, limit = 2, offset = 0, sort = "newest", ) => {
             })
     }
 }
-
-const addFive = () => {
-    return {
-        type: actionTypes.ADD_FIVE
-    }
-}
-
-export const addFiveMore = () => {
-    return dispatch => {
-        dispatch(addFive())
-    }
-}

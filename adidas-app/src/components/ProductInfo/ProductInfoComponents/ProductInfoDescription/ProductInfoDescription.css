@@ -23,13 +23,9 @@
 
 .jumptoreviews a {
    color: black;
-   padding: 3px 0;
    text-decoration: none;
 }
 
 .jumptoreviews a:hover {
-    color: white;
-    background-color: black;
-    text-decoration: underline;
-    border-radius: 5px;
+   text-decoration: underline;
  }
