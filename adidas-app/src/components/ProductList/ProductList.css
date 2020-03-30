@@ -1,8 +1,51 @@
 .productlist {
-    max-width: 1366px;
-    display: flex;
-    margin: auto;
-    flex-wrap: wrap;
+    width: 100%;
+    display: grid;
     justify-content: center;
-    align-items: flex-start;
+    margin: auto;
+    grid-template-columns: 305px 305px 305px 305px;
+    grid-template-rows: auto;
+    gap: 5px;
+}
+
+.productlistcurrentprice span:nth-child(1) {
+    color: red;
+    margin-right: 5px;
+}
+
+.productlistcurrentprice span:nth-child(2) {
+    text-decoration: line-through;
+}
+
+.productliststandardprice span{
+    color: black
+}
+
+@media only screen and (max-width: 625px) {
+    .productlist {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        margin: auto;
+        grid-template-columns: 305px;
+        grid-template-rows: auto;
+    }
+}
+
+@media only screen and (min-width: 625px) {
+    .productlist {
+        grid-template-columns: 305px 305px;
+    }
+}
+
+@media only screen and (min-width: 935px) {
+    .productlist {
+        grid-template-columns: 305px 305px 305px;
+    }
+}
+
+@media only screen and (min-width: 1245px) {
+    .productlist {
+        grid-template-columns: 305px 305px 305px 305px;
+    }
 }

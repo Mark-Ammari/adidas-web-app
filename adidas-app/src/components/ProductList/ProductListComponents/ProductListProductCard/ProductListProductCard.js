@@ -1,8 +1,8 @@
 import React from 'react';
 import './ProductListProductCard.css';
-import { Typography } from '@material-ui/core';
+import { Typography, IconButton } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
-
+import ProductBadge from '../../../ProductBadge/ProductBadge';
 const ProductListProductCard = (props) => {
     return (
         <div className="productlistproductcard">
@@ -10,21 +10,20 @@ const ProductListProductCard = (props) => {
                 pathname: `/${props.nameuri}/${props.id}`,
                 search: `?model=${props.query}`
             }}>
-                <img id="productListProductCardImg" onMouseOver={(e) => {e.target.src=props.altimg}} onMouseOut={(e) => {e.target.src=props.img}}  src={props.img} alt="product" />
+                <div
+                    className="productListProductCardImg"
+                    style={{ backgroundImage: `url(${props.img})` }}
+                >
+
+                </div>
                 <div className="productlistproductcardmargin">
                     <Typography variant="subtitle2" color="textSecondary">{props.division}</Typography>
                     <Typography variant="body1" color="textPrimary">{props.name}</Typography>
-                    {props.currentPrice < props.standardPrice ?
-                        <div>
-                            <Typography>${props.currentprice}</Typography>
-                            <Typography>${props.standardprice}</Typography>
-                        </div>
-                        :
-                        <Typography>${props.standardprice}</Typography>
-                    }
+                    {props.price}
                     <Typography variant="subtitle2" color="textSecondary">{props.colorvariations ? `${props.colorvariations} colors` : ''}</Typography>
                 </div>
             </NavLink>
+            <ProductBadge badge={props.badge}/>
         </div>
     );
 };

@@ -45,7 +45,7 @@ const ProductInfo = (props) => {
                 <>
                     <div className="productinfo">
                         <div className="productinfoimages">
-                            <ProductInfoMainImg search={searchProduct["view_list"][pointer]["image_url"]} stacleft={stacLeft} stacright={stacRight} />
+                            <ProductInfoMainImg badge={searchProduct["attribute_list"]["badge_text"]} search={searchProduct["view_list"][pointer]["image_url"]} stacleft={stacLeft} stacright={stacRight} />
                             <div className="productinfogallery">
                                 {searchProduct["view_list"].map((img, key) => {
                                     return <div key={key}><img

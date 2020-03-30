@@ -12,6 +12,9 @@ const useStyles = makeStyles(theme => ({
         padding: "10px",
         minWidth: "200px",
         fontFamily: "AdineuePRO,Helvetica,Arial,sans-serif"
+    },
+    btnMargin: {
+        marginLeft: "15px"
     }
 }));
 
@@ -31,8 +34,8 @@ const ProductListDropdown = (props) => {
     const id = open ? 'simple-popover' : undefined;
 
     return (
-        <div>
-            <Button  aria-describedby={id} variant="text" onClick={handleClick}>
+        <div >
+            <Button className={classes.btnMargin} aria-describedby={id} variant="text" onClick={handleClick}>
                 <strong>{props.title}</strong>
                 {open ? <KeyboardArrowDownRounded /> : <KeyboardArrowUpRounded />}
             </Button>

@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux';
 
 const ProductListFilterBar = () => {
     const filterItems = useSelector(state => state.filterItems.filterItems)
-    const loading = useSelector(state => state.filterItems.loading)
-
 
     return (
         <div className="productlistfilterbar">

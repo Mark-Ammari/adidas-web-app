@@ -24,7 +24,7 @@
     width: -webkit-max-content;
     margin-bottom: -1px;
     width: max-content;
-    z-index: 3;
+    z-index: 999;
 }
 
 .dropdown:hover {

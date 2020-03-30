@@ -1,8 +1,10 @@
 .trendingbar {
-    display: flex;
-    overflow-x: scroll;
-    justify-content: flex-start;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, [col] 305px) ;
+    gap: 5px;
+    padding: 5px;
+    overflow-x: auto;
+    grid-template-rows: auto;
 }
 
 .trendingbar::-webkit-scrollbar-thumb {
@@ -13,7 +15,6 @@
 }
 .trendingbar::-webkit-scrollbar-corner {
     border-radius: 5px;
-
 }
 
 .trendingtitle {

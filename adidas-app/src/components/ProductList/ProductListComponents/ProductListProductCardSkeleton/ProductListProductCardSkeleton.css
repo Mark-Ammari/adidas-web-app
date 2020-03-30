@@ -1,11 +1,12 @@
 .productlistproductcardskeleton {
-    height: 452.2px;
-    margin: 1px
+    height: 452px;
+    width: 100%;
+    border: 1px solid transparent;
 }
 
 .productlistproductcardskeletonimg {
-    width: 300px;
-    border-radius: 5px 5px 0px 0px;
+    width: 100%;
+    border-radius: 5px;
     height: 300px;
     background-color: rgba(235, 237, 238, 1);
     animation: flow infinite 1s ease-in-out;
@@ -21,7 +22,7 @@
     background-color: rgba(235, 237, 238, 1);
     -webkit-animation: flow infinite 1s ease-in-out;
     height: 15px;
-    margin: 10px 0px;
+    margin: 7.5px 0px;
     width: 125px;
 }
 

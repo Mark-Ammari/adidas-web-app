@@ -1,0 +1,24 @@
+.productlistbadge {
+    background-color: #fff;
+    color: #000;
+    font-style: italic;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 10pt;
+    padding: 0px 5px;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    letter-spacing: 2pt;
+    display: inline-block;
+}
+
+.productlistproductcardbadgecontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

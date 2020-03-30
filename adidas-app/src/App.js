@@ -9,6 +9,7 @@ import * as trendingAction from './store/actions/trending';
 import Landingpage from './components/Pages/Landingpage/Landingpage';
 import Footer from './components/Footer/Footer';
 import ProductInfoContainer from './components/Pages/ProductInfoContainer/ProductInfoContainer';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   const dispatch = useDispatch()
@@ -25,11 +26,10 @@ function App() {
       <>
         <BrowserRouter>
           <Header />
-          <Switch>
-            <Route exact path="/" component={Landingpage} />
-            <Route exact path="/:query" component={ProductListContainer} />
-          </Switch>
-          <Route path="/:productName/:id" component={ProductInfoContainer} />
+          <ScrollToTop />
+          <Route exact path="/" component={Landingpage} />
+          <Route exact path="/:query" component={ProductListContainer} />
+          <Route exact path="/:productName/:id" component={ProductInfoContainer} />
           <Footer />
         </BrowserRouter>
       </>

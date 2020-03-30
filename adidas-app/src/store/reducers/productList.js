@@ -2,6 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     productList: {},
+    productListTags: [],
     loading: true
 };
 
@@ -15,6 +16,7 @@ const productListReducer = (state = initialState, action) => {
         case actionTypes.FETCH_PRODUCT_SUCCESS:
             return {
                 productList: action.productList,
+                productListTags: action.productListTags,
                 loading: false,
             }
         case actionTypes.FETCH_PRODUCT_FAIL:
