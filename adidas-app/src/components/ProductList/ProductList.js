@@ -5,9 +5,10 @@ import ProductListFilterBar from './ProductListComponents/ProductListFilterBar/P
 import ProductListProductCard from './ProductListComponents/ProductListProductCard/ProductListProductCard';
 import ProductListProductCardSkeleton from './ProductListComponents/ProductListProductCardSkeleton/ProductListProductCardSkeleton';
 import { Typography } from '@material-ui/core';
+import ProductListPages from './ProductListComponents/ProductListPages/ProductListPages';
 
 const ProductList = (props) => {
-    const productList = useSelector(state => state.productList.productList)
+    const productList = useSelector(state => state.productList.productItemList)
     const productItems = useSelector(state => state.productItems.productItems)
     const loading = useSelector(state => state.productList.loading)
     const loadProductItems = useSelector(state => state.productItems.loading)
@@ -15,9 +16,10 @@ const ProductList = (props) => {
 
     return (
         <>
-            <ProductListFilterBar />
+            {/* <ProductListFilterBar /> */}
+            <ProductListPages />
             <div className="productlist">
-                {loadProductItems || loading ?
+                {loadProductItems || loading ? 
                     arr.map((item, key) => {
                         return <ProductListProductCardSkeleton key={key} />
                     })

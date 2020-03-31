@@ -13,9 +13,10 @@ export const fetchProductListFail = () => {
     };
 };
 
-export const fetchProductListSuccess = (productList) => {
+export const fetchProductListSuccess = (productItemList, productList) => {
     return {
         type: actionTypes.FETCH_PRODUCT_SUCCESS,
+        productItemList: productItemList,
         productList: productList,
     };
 };
@@ -30,7 +31,7 @@ export const fetchProductList = (sitePath="us", query, start, sort) => {
             sort: sort
         }})
         .then(res => {
-            dispatch(fetchProductListSuccess(res.data.itemList.items))
+            dispatch(fetchProductListSuccess(res.data.itemList.items, res.data))
         })
         .catch(err => {
             console.log(err)
