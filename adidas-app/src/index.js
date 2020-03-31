@@ -14,6 +14,7 @@ import sizesProductReducer from './store/reducers/sizesProduct';
 import ratingsAndReviewsReducer from './store/reducers/ratingsAndReviews';
 import filterReducer from './store/reducers/filter';
 import productItemsReducer from './store/reducers/ProductItems';
+import pagesReducer from './store/reducers/pages';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -25,7 +26,8 @@ const rootReducter = combineReducers({
     sizesProduct: sizesProductReducer,
     ratingsAndReviews: ratingsAndReviewsReducer,
     filterItems: filterReducer,
-    productItems: productItemsReducer
+    productItems: productItemsReducer,
+    pages: pagesReducer
 })
 
 const store = createStore(rootReducter, composeEnhancers(applyMiddleware(thunk)))

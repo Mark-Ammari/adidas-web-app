@@ -17,36 +17,41 @@ const ProductList = (props) => {
     return (
         <>
             {/* <ProductListFilterBar /> */}
-            <ProductListPages />
             <div className="productlist">
-                {loadProductItems || loading ? 
+                {loadProductItems || loading ?
                     arr.map((item, key) => {
                         return <ProductListProductCardSkeleton key={key} />
                     })
                     :
                     productList.map((item, key) => {
-                        return <ProductListProductCard
-                            query={item.modelId}
-                            id={item.productId}
-                            key={key}
-                            img={item.image.src}
-                            badge={productItems[key]["attribute_list"]["badge_text"]}
-                            name={item.displayName}
-                            nameuri={item.displayName.split(' ').join('-').split('/').join('-')}
-                            division={item.division}
-                            colorvariations={item.colorVariations.length}
-                            price={productItems[key]["pricing_information"]["currentPrice"] < productItems[key]['pricing_information']['standard_price'] ?
-                                <div className="productlistcurrentprice">
-                                    <span>${productItems[key]["pricing_information"]["currentPrice"]}</span>
-                                    <span>${productItems[key]['pricing_information']['standard_price']}</span>
-                                </div>
-                                :
-                                <div className="productliststandardprice"><span>${productItems[key]['pricing_information']['standard_price']}</span></div>
-                            }
-                        />
+                        if (productItems[key]) {
+                            return <ProductListProductCard
+                                query={item.modelId}
+                                id={item.productId}
+                                key={key}
+                                img={item.image.src}
+                                badge={productItems[key]["attribute_list"]["badge_text"]}
+                                name={item.displayName}
+                                nameuri={item.displayName.split(' ').join('-').split('/').join('-')}
+                                division={item.division}
+                                colorvariations={item.colorVariations.length}
+                                price={productItems[key]["pricing_information"] ? null : productItems[key]["pricing_information"]["currentPrice"] < productItems[key]['pricing_information']['standard_price'] ?
+                                    <div className="productlistcurrentprice">
+                                        <span>${productItems[key]["pricing_information"]["currentPrice"]}</span>
+                                        <span>${productItems[key]['pricing_information']['standard_price']}</span>
+                                    </div>
+                                    :
+                                    <div className="productliststandardprice"><span>${productItems[key]['pricing_information']['standard_price']}</span></div>
+                                }
+                            />
+                        } else {
+                            return;
+                        }
                     })
                 }
             </div>
+            <ProductListPages />
+
         </>
     );
 };
