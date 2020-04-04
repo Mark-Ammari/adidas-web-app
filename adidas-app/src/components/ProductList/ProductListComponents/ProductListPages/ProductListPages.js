@@ -1,27 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductListPages.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { IconButton, Typography } from '@material-ui/core';
 import { ArrowBackIosRounded, ArrowForwardIosRounded } from '@material-ui/icons';
-import { goBackPage, goForwardPage } from '../../../../store/actions/pages';
+import { goBackPage, goForwardPage, resetPageToZero } from '../../../../store/actions/pages'
+import { useHistory } from 'react-router-dom';
+import usePrevious from '../../../../hooks/usePrevious';
 
-const ProductListPages = (props) => {
+const ProductListPages = () => {
+    const dispatch = useDispatch();
     const productList = useSelector(state => state.productList.productList)
     const loading = useSelector(state => state.productList.loading)
-    const pages = useSelector(state => state.pages.pages)
-    const dispatch = useDispatch()
-    const goBack = () => {
-        dispatch(goBackPage())
-    }
+    const pages = useSelector(state => state.pages.pages);
+    
+    const history = useHistory()
+    
+    const [ match, setMatch ] = useState(history.location.pathname)
+    const previous = usePrevious(match)
+   
+    useEffect(() => {
+        setMatch(history.location.pathname)
+        if (previous !== match) {
+            dispatch(resetPageToZero())
+        }
+        history.replace({
+            search: `?start=${pages}`
+        })
+    }, [history, pages, dispatch, history.location.pathname, match, previous])
+
     const goForward = () => {
         dispatch(goForwardPage())
     }
+
+    const goBack = () => {
+        dispatch(goBackPage())
+    }
+
     return (
         <div className="productlistpages">
             {loading ? null
                 :
                 <>
-                    <IconButton disabled={pages <= 0} onClick={goBack}>
+                    <IconButton disabled={productList.itemList.currentSet <= 1} onClick={goBack}>
                         <ArrowBackIosRounded fontSize="small" />
                     </IconButton>
 

@@ -9,7 +9,6 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexDirection: "column",
         justifyContents: "space-around",
-        padding: "10px",
         minWidth: "200px",
         fontFamily: "AdineuePRO,Helvetica,Arial,sans-serif"
     },

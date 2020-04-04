@@ -1,15 +1,20 @@
 import React from 'react';
 import './DropdownItem.css';
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
-const dropdownItem = (props) => {
+const DropdownItem = (props) => {
+
+    const pages = useSelector(state => state.pages.pages)
+
     return (
         <div className="dropdown">
             <NavLink
             className="navlink dropbtn"
-            activeStyle={{
-            }}
-            to={"/" + props.name}>{props.name}</NavLink>
+            to={{ 
+                pathname: "/" + props.name,
+                search: "?start=0"
+            }}>{props.name}</NavLink>
             <div className="dropdown-content">
                 {props.children}
             </div>
@@ -17,4 +22,4 @@ const dropdownItem = (props) => {
     );
 };
 
-export default dropdownItem
+export default DropdownItem

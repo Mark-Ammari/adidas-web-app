@@ -13,11 +13,12 @@ export const fetchProductListFail = () => {
     };
 };
 
-export const fetchProductListSuccess = (productItemList, productList) => {
+export const fetchProductListSuccess = (productItemList, productList, productListSortRules) => {
     return {
         type: actionTypes.FETCH_PRODUCT_SUCCESS,
         productItemList: productItemList,
         productList: productList,
+        productListSortRules: productListSortRules
     };
 };
 
@@ -31,7 +32,7 @@ export const fetchProductList = (sitePath="us", query, start, sort) => {
             sort: sort
         }})
         .then(res => {
-            dispatch(fetchProductListSuccess(res.data.itemList.items, res.data))
+            dispatch(fetchProductListSuccess(res.data.itemList.items, res.data, res.data.sort.rules))
         })
         .catch(err => {
             console.log(err)

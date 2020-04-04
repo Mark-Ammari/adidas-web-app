@@ -17,6 +17,7 @@ const ProductList = (props) => {
     return (
         <>
             {/* <ProductListFilterBar /> */}
+            <ProductListPages />
             <div className="productlist">
                 {loadProductItems || loading ?
                     arr.map((item, key) => {
@@ -35,7 +36,7 @@ const ProductList = (props) => {
                                 nameuri={item.displayName.split(' ').join('-').split('/').join('-')}
                                 division={item.division}
                                 colorvariations={item.colorVariations.length}
-                                price={productItems[key]["pricing_information"] ? null : productItems[key]["pricing_information"]["currentPrice"] < productItems[key]['pricing_information']['standard_price'] ?
+                                price={productItems[key]["pricing_information"]["currentPrice"] < productItems[key]['pricing_information']['standard_price'] ?
                                     <div className="productlistcurrentprice">
                                         <span>${productItems[key]["pricing_information"]["currentPrice"]}</span>
                                         <span>${productItems[key]['pricing_information']['standard_price']}</span>
@@ -51,7 +52,6 @@ const ProductList = (props) => {
                 }
             </div>
             <ProductListPages />
-
         </>
     );
 };

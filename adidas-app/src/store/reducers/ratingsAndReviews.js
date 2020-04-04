@@ -5,6 +5,7 @@ const initialState = {
     reviewsProduct: {},
     reviewList: [],
     distributionList: [],
+    setSort: 'newest',
     loading: true,
 }
 
@@ -43,6 +44,21 @@ const ratingsAndReviewsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
+            }
+        case actionTypes.SORT_REVIEWS_NEWEST:
+            return {
+                ...state,
+                setSort: 'newest'
+            }
+        case actionTypes.SORT_REVIEWS_HELPFUL:
+            return {
+                ...state,
+                setSort: 'helpful'
+            }
+        case actionTypes.SORT_REVIEWS_RELEVANT:
+            return {
+                ...state,
+                setSort: 'relevant'
             }
         default: return state;
     }

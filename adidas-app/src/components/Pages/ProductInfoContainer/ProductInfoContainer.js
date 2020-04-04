@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './ProductInfoContainer.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as searchProductAction from '../../../store/actions/searchProduct';
 import * as sizesProductAction from '../../../store/actions/sizesProduct';
 import * as ratingsAndReviewsAction from '../../../store/actions/ratingsAndReviews';

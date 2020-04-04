@@ -16,17 +16,26 @@ const Navbar = () => {
                 <nav className="navlinks">
                     <ul>
                         {loading ? null : menData.shoes.map((shoes, key) => {
-                            return <li key={key}><NavLink to={shoes.path}>{shoes.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{
+                                pathname: shoes.path,
+                                search: `?start=0`
+                            }}>{shoes.name}</NavLink></li>
                         })}
                     </ul>
                     <ul>
                         {loading ? null : menData.clothing.map((clothing, key) => {
-                            return <li key={key}><NavLink to={clothing.path}>{clothing.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{
+                                pathname: clothing.path,
+                                search: `?start=0`
+                            }}>{clothing.name}</NavLink></li>
                         })}
                     </ul>
                     <ul>
                         {loading ? null : menData.accessories.map((accessories, key) => {
-                            return <li key={key}><NavLink to={accessories.path}>{accessories.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{ 
+                                pathname: accessories.path,
+                                search: `?start=0`
+                            }}>{accessories.name}</NavLink></li>
                         })}
                     </ul>
                 </nav>
@@ -35,17 +44,26 @@ const Navbar = () => {
                 <nav className="navlinks">
                     <ul>
                         {loading ? null : womenData.shoes.map((shoes, key) => {
-                            return <li key={key}><NavLink to={shoes.path}>{shoes.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{
+                                pathname: shoes.path,
+                                search: `?start=0`
+                            }}>{shoes.name}</NavLink></li>
                         })}
                     </ul>
                     <ul>
                         {loading ? null : womenData.clothing.map((clothing, key) => {
-                            return <li key={key}><NavLink to={clothing.path}>{clothing.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{
+                                pathname: clothing.path,
+                                search: `?start=0`
+                            }}>{clothing.name}</NavLink></li>
                         })}
                     </ul>
                     <ul>
                         {loading ? null : womenData.accessories.map((accessories, key) => {
-                            return <li key={key}><NavLink to={accessories.path}>{accessories.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{ 
+                                pathname: accessories.path,
+                                search: `?start=0`
+                            }}>{accessories.name}</NavLink></li>
                         })}
                     </ul>
                 </nav>
@@ -54,17 +72,26 @@ const Navbar = () => {
                 <nav className="navlinks">
                     <ul>
                         {loading ? null : kidsData.youth.map((youth, key) => {
-                            return <li key={key}><NavLink to={youth.path}>{youth.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{ 
+                                pathname: youth.path,
+                                search: `?start=0`
+                            }}>{youth.name}</NavLink></li>
                         })}
                     </ul>
                     <ul>
                         {loading ? null : kidsData.children.map((children, key) => {
-                            return <li key={key}><NavLink to={children.path}>{children.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{
+                                pathname: children.path,
+                                search: `?start=0`
+                            }}>{children.name}</NavLink></li>
                         })}
                     </ul>
                     <ul>
                         {loading ? null : kidsData.babies.map((babies, key) => {
-                            return <li key={key}><NavLink to={babies.path}>{babies.name}</NavLink></li>
+                            return <li key={key}><NavLink to={{ 
+                                pathname: babies.path,
+                                search: `?start=0`
+                            }}>{babies.name}</NavLink></li>
                         })}
                     </ul>
                 </nav>

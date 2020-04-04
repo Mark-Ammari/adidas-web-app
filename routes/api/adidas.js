@@ -25,32 +25,6 @@ router.get('/filteritem', (req, res) => {
 
 router.post('/filteritem', (req, res) => {
     const filter = new FilterItems({
-        gender: {
-             category: "GENDER",
-             filter: [
-                {  name: "Men",  value: "men" },
-                {  name: "Women",  value: "women" },
-                {  name: "Kids",  value: "kids" },
-            ]
-        },
-
-        activity: {
-             category: "ACTIVITY",
-             filter: [
-                {  name: "Athletic",  value: "Athletic" },
-                {  name: "Casual",  value: "casual" },
-            ]
-        },
-
-        categories: {
-             category: "CATEGORIES",
-             filter: [
-                {  name: "Shoes",  value: "shoes" },
-                {  name: "Apparel",  value: "apparel" },
-                {  name: "Accessories",  value: "accessories" },
-            ]
-        },
-
         sortBy: {
              category: "SORT BY",
              filter: [

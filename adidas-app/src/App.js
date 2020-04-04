@@ -27,9 +27,11 @@ function App() {
         <BrowserRouter>
           <Header />
           <ScrollToTop />
-          <Route exact path="/" component={Landingpage} />
-          <Route exact path="/:query" component={ProductListContainer} />
-          <Route exact path="/:productName/:id" component={ProductInfoContainer} />
+          <Switch>
+            <Route exact path="/" component={Landingpage} />
+            <Route exact path="/:query" component={ProductListContainer} />
+            <Route exact path="/:productName/:id" component={ProductInfoContainer} />
+          </Switch>
           <Footer />
         </BrowserRouter>
       </>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ProductInfoRatingsAndReviews.css';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import Ratings from '../../../Ratings/Ratings'
 import RatingBreakdown from './RatingBreakdown/RatingBreakdown';
@@ -13,14 +13,15 @@ const ProductInfoRatingsAndReviews = () => {
     const getRatings = useSelector(state => state.ratingsAndReviews.ratingsProduct)
     const ratingDistribution = useSelector(state => state.ratingsAndReviews.distributionList)
     const reviews = useSelector(state => state.ratingsAndReviews.reviewList)
+    const setSort = useSelector(state => state.ratingsAndReviews.setSort)
 
     const history = useHistory()
     const dispatch = useDispatch()
 
     const [loadMore, setLoadMore] = useState(2)
     useEffect(() => {
-        dispatch(ratingsAndReviewsAction.fetchReviews(history.location.search.slice(7), loadMore))
-    }, [dispatch, history.location.search, loadMore])
+        dispatch(ratingsAndReviewsAction.fetchReviews(history.location.search.slice(7), loadMore, 0, setSort))
+    }, [dispatch, history.location.search, loadMore, setSort])
 
     return (
         <>
@@ -72,6 +73,21 @@ const ProductInfoRatingsAndReviews = () => {
                         </div>
                     </div>
                     <div className="reviews">
+                        <Button
+                            onClick={() => dispatch(ratingsAndReviewsAction.setReviewProductNewest())}
+                            style={{
+                                marginRight: "5px"
+                            }} variant="outlined" size="small" color="default">newest</Button>
+                        <Button
+                            onClick={() => dispatch(ratingsAndReviewsAction.setReviewProductHelpful())}
+                            style={{
+                                marginRight: "5px"
+                            }} variant="outlined" size="small" color="default">helpful</Button>
+                        <Button
+                            onClick={() => dispatch(ratingsAndReviewsAction.setReviewProductRelevant())}
+                            style={{
+                                marginRight: "5px"
+                            }} variant="outlined" size="small" color="default">relevant</Button>
                         {reviews.length > 0 ?
                             reviews.map((post, key) => {
                                 return <ReviewPost

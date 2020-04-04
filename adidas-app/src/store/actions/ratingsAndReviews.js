@@ -70,3 +70,21 @@ export const fetchReviews = (id, limit = 2, offset = 0, sort = "newest", ) => {
             })
     }
 }
+
+export const setReviewProductNewest = () => {
+    return {
+        type: actionTypes.SORT_REVIEWS_NEWEST
+    }
+}
+
+export const setReviewProductHelpful = () => {
+    return {
+        type: actionTypes.SORT_REVIEWS_HELPFUL
+    }
+}
+
+export const setReviewProductRelevant = () => {
+    return {
+        type: actionTypes.SORT_REVIEWS_RELEVANT
+    }
+}

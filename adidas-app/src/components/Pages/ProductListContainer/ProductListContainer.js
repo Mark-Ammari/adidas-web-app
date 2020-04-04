@@ -1,41 +1,24 @@
-import React, { useEffect, useCallback, useMemo, useState } from 'react';
+import React, { useEffect } from 'react';
 import './ProductListContainer.css';
 import ProductList from '../../ProductList/ProductList';
-import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import * as productListAction from '../../../store/actions/productList';
 import * as productItemsAction from '../../../store/actions/productItems';
 import * as filterAction from '../../../store/actions/filter';
-import usePrevious from '../../../hooks/usePrevious';
-import {resetPageToZero} from '../../../store/actions/pages'
 
 const ProductListContainer = (props) => {
     const dispatch = useDispatch()
-    const history = useHistory()
-    const pages = useSelector(state => state.pages.pages)
-    let pathName = history.location.pathname.slice(1)
-    let [ match, setMatch ] = useState(props.match.url)
-    let previous = usePrevious(match)
-
+    
     useEffect(() => {
-        dispatch(productListAction.fetchProductList("us", pathName, pages))
-        dispatch(productItemsAction.fetchProductItems("us", pathName, pages))
+        dispatch(productListAction.fetchProductList("us", props.match.url.slice(1), props.location.search.slice(7)))
+        dispatch(productItemsAction.fetchProductItems("us", props.match.url.slice(1), props.location.search.slice(7)))
         dispatch(filterAction.fetchFilter())
-    }, [pathName, dispatch, pages])
-
-    useEffect(() => {
-        setMatch(props.match.url)
-        if (previous !== match) {
-            dispatch(resetPageToZero())
-        }
-    }, [dispatch, match, previous, props.match.url])
+    }, [props.match.url, dispatch, props.location.search])
 
     return (
         <div>
-            <ProductList 
-                
-            />
-        </div> 
+            <ProductList/>
+        </div>
     );
 };
 
