@@ -10,6 +10,7 @@ import Landingpage from './components/Pages/Landingpage/Landingpage';
 import Footer from './components/Footer/Footer';
 import ProductInfoContainer from './components/Pages/ProductInfoContainer/ProductInfoContainer';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import RegistrationPage from './components/Pages/Registrationpage/RegistrationPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -23,18 +24,21 @@ function App() {
     return null
   } else {
     return (
-      <>
+      <div className="app">
         <BrowserRouter>
           <Header />
           <ScrollToTop />
           <Switch>
             <Route exact path="/" component={Landingpage} />
+            <Route exact path="/register" component={RegistrationPage} />
+            <Route exact path="/login" component={RegistrationPage} />
             <Route exact path="/:query" component={ProductListContainer} />
             <Route exact path="/:productName/:id" component={ProductInfoContainer} />
           </Switch>
           <Footer />
         </BrowserRouter>
-      </>
+      </div>
+
     );
   };
 };

@@ -5,8 +5,6 @@ import { useSelector } from 'react-redux';
 
 const DropdownItem = (props) => {
 
-    const pages = useSelector(state => state.pages.pages)
-
     return (
         <div className="dropdown">
             <NavLink

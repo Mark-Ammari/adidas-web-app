@@ -1,0 +1,21 @@
+.Collapsibles ul {
+    list-style-type: none
+}
+
+.Collapsibles li {
+    margin: 3px 0 ;
+}
+
+.Collapsibles li a {
+    color: black;
+    text-decoration: none;
+}
+
+.Collapsibles li:first-child {
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.Collapsibles li a:hover {
+    text-decoration: underline;
+}

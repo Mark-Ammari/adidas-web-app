@@ -1,0 +1,11 @@
+.authorization {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.authorization section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}

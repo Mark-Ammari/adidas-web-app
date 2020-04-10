@@ -8,16 +8,17 @@ import * as filterAction from '../../../store/actions/filter';
 
 const ProductListContainer = (props) => {
     const dispatch = useDispatch()
-    
+    // const sortBy = useSelector(state => state.productList.sortBy)
+
     useEffect(() => {
         dispatch(productListAction.fetchProductList("us", props.match.url.slice(1), props.location.search.slice(7)))
         dispatch(productItemsAction.fetchProductItems("us", props.match.url.slice(1), props.location.search.slice(7)))
         dispatch(filterAction.fetchFilter())
-    }, [props.match.url, dispatch, props.location.search])
+    }, [dispatch, props.match.url, props.location.search])
 
     return (
         <div>
-            <ProductList/>
+            <ProductList />
         </div>
     );
 };

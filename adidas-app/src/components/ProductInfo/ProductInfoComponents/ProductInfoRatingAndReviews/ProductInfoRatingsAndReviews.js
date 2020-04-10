@@ -73,7 +73,10 @@ const ProductInfoRatingsAndReviews = () => {
                         </div>
                     </div>
                     <div className="reviews">
-                        <Button
+                       
+                        {reviews.length > 0 ?
+                            <>
+                             <Button
                             onClick={() => dispatch(ratingsAndReviewsAction.setReviewProductNewest())}
                             style={{
                                 marginRight: "5px"
@@ -82,14 +85,15 @@ const ProductInfoRatingsAndReviews = () => {
                             onClick={() => dispatch(ratingsAndReviewsAction.setReviewProductHelpful())}
                             style={{
                                 marginRight: "5px"
-                            }} variant="outlined" size="small" color="default">helpful</Button>
+                            }} 
+                            variant="outlined" size="small" color="default">helpful</Button>
                         <Button
                             onClick={() => dispatch(ratingsAndReviewsAction.setReviewProductRelevant())}
                             style={{
                                 marginRight: "5px"
-                            }} variant="outlined" size="small" color="default">relevant</Button>
-                        {reviews.length > 0 ?
-                            reviews.map((post, key) => {
+                            }} 
+                            variant="outlined" size="small" color="default">relevant</Button>
+                            { reviews.map((post, key) => {
                                 return <ReviewPost
                                     key={key}
                                     value={post.rating}
@@ -99,7 +103,8 @@ const ProductInfoRatingsAndReviews = () => {
                                     isRecommended={post.isRecommended}
                                     username={post.userNickname}
                                 />
-                            })
+                            })}
+                            </>
                             : null
                         }
                         {reviews.length >= getRatings.reviewCount ? null :

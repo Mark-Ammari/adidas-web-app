@@ -40,3 +40,27 @@ export const fetchProductList = (sitePath="us", query, start, sort) => {
         })
     }
 };
+
+export const productListSortNewest = () => {
+    return {
+        type: actionTypes.SORT_PRODUCTLIST_NEWEST,
+    }
+}
+
+export const productListSortLowToHigh = () => {
+    return {
+        type: actionTypes.SORT_PRODUCTLIST_LOW_TO_HIGH,
+    }
+}
+
+export const productListSortHighToLow = () => {
+    return {
+        type: actionTypes.SORT_PRODUCTLIST_HIGH_TO_LOW,
+    }
+}
+
+export const productListSortTopSellers = () => {
+    return {
+        type: actionTypes.SORT_PRODUCTLIST_TOP_SELLERS,
+    }
+}

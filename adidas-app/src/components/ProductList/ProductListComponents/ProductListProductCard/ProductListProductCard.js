@@ -3,6 +3,7 @@ import './ProductListProductCard.css';
 import { Typography, IconButton } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import ProductBadge from '../../../ProductBadge/ProductBadge';
+
 const ProductListProductCard = (props) => {
     return (
         <div className="productlistproductcard">
