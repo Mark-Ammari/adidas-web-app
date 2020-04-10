@@ -17,7 +17,7 @@ const Collapsibles = () => {
                 <Collapsible index={1} title="SHOES">
                     <ul>
                         {loading ? null : menData.shoes.map((shoes, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: shoes.path,
                                 search: `?start=0`
                             }}>{shoes.name}</NavLink></li>
@@ -27,7 +27,7 @@ const Collapsibles = () => {
                 <Collapsible index={2} title="APPAREL">
                     <ul>
                         {loading ? null : menData.clothing.map((clothing, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: clothing.path,
                                 search: `?start=0`
                             }}>{clothing.name}</NavLink></li>
@@ -37,7 +37,7 @@ const Collapsibles = () => {
                 <Collapsible index={3} title="ACCESSORIES">
                     <ul>
                         {loading ? null : menData.accessories.map((accessories, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: accessories.path,
                                 search: `?start=0`
                             }}>{accessories.name}</NavLink></li>
@@ -49,7 +49,7 @@ const Collapsibles = () => {
                 <Collapsible index={5} title="SHOES">
                     <ul>
                         {loading ? null : womenData.shoes.map((shoes, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: shoes.path,
                                 search: `?start=0`
                             }}>{shoes.name}</NavLink></li>
@@ -59,7 +59,7 @@ const Collapsibles = () => {
                 <Collapsible index={6} title="APPAREL">
                     <ul>
                         {loading ? null : womenData.clothing.map((clothing, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: clothing.path,
                                 search: `?start=0`
                             }}>{clothing.name}</NavLink></li>
@@ -69,7 +69,7 @@ const Collapsibles = () => {
                 <Collapsible index={7} title="ACCESSORIES">
                     <ul>
                         {loading ? null : womenData.accessories.map((accessories, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: accessories.path,
                                 search: `?start=0`
                             }}>{accessories.name}</NavLink></li>
@@ -81,7 +81,7 @@ const Collapsibles = () => {
                 <Collapsible index={9} title="YOUTH (AGE 8 - 14)">
                     <ul>
                         {loading ? null : kidsData.youth.map((youth, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: youth.path,
                                 search: `?start=0`
                             }}>{youth.name}</NavLink></li>
@@ -91,7 +91,7 @@ const Collapsibles = () => {
                 <Collapsible index={10} title="CHILDREN (AGE 4 - 8)">
                     <ul>
                         {loading ? null : kidsData.children.map((children, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: children.path,
                                 search: `?start=0`
                             }}>{children.name}</NavLink></li>
@@ -101,7 +101,7 @@ const Collapsibles = () => {
                 <Collapsible index={11} title="BABY &amp; TODDLER (AGE 0 - 4)">
                     <ul>
                         {loading ? null : kidsData.babies.map((babies, key) => {
-                            return <li><NavLink to={{
+                            return <li key={key}><NavLink to={{
                                 pathname: babies.path,
                                 search: `?start=0`
                             }}>{babies.name}</NavLink></li>
