@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ProductInfoSpecsDesktop.css';
+import classes from './ProductInfoSpecsDesktop.module.css';
 import SwipeableViews from 'react-swipeable-views';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductInfoSpecsDesktop = (props) => {
-  const classes = useStyles();
+  const styles = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -68,11 +68,11 @@ const ProductInfoSpecsDesktop = (props) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={styles.root}>
       <AppBar position="static" color="default">
         <Tabs
           TabIndicatorProps={{ style: { background: "#OOO" } }}
-          classes={{ indicator: classes.indicator }}
+          classes={{ indicator: styles.indicator }}
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
@@ -91,7 +91,7 @@ const ProductInfoSpecsDesktop = (props) => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <div className="productinfospecsdesktopdescription">
+          <div className={classes.ProductInfoSpecsDesktopDescription}>
             {searchProduct.hasOwnProperty("product_description") ?
               <>
                 <div>
@@ -107,7 +107,7 @@ const ProductInfoSpecsDesktop = (props) => {
           </div>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <div className="productinfospecsdesktopdescription">
+          <div className={classes.ProductInfoSpecsDesktopDescription}>
             {searchProduct.hasOwnProperty("product_description") && searchProduct["product_description"].hasOwnProperty("usps") ?
               <>
                 <div>
@@ -129,17 +129,16 @@ const ProductInfoSpecsDesktop = (props) => {
           </div>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          <div className="productinfospecsdesktopdescription">
+          <div className={classes.ProductInfoSpecsDesktopDescription}>
             {searchProduct.hasOwnProperty("product_description") && searchProduct["product_description"].hasOwnProperty("product_highlights") ?
               searchProduct["product_description"]["product_highlights"].map((highlight, key) => {
-                return <div className="productinfospecsdesktopdescriptionhighlights" key={key}>
+                return <div className={classes.ProductInfoSpecsDesktopDescriptionHighlights} key={key}>
                   <Typography variant="h5" gutterBottom>{highlight.headline}</Typography>
                   <Typography variant="subtitle1" gutterBottom>{highlight.copy}</Typography>
                 </div>
               })
               : null
             }
-
           </div>
         </TabPanel>
       </SwipeableViews>

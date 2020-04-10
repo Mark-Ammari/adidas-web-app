@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classes from './Collapsible.module.css';
-import { ListItem, ListItemText, Typography } from '@material-ui/core';
+import { ListItem, ListItemText } from '@material-ui/core';
 import { ArrowDropDownRounded, ArrowDropUpRounded } from '@material-ui/icons';
 
 const Collapsible = (props) => {

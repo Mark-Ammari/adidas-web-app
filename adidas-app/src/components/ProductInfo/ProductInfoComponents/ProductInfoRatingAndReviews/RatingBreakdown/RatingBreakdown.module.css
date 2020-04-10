@@ -1,4 +1,4 @@
-.ratingbreakdown {
+.RatingBreakdown {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-.skillbar {
+.SkillBar {
     width: 100%;
     /* Full width */
     background-color: #767677;
@@ -15,17 +15,17 @@
     border-radius: 10px;
 }
 
-.ratings {
+.Ratings {
     width: 69px;
     margin-right: 5px;
 }
 
-.count {
+.Count {
     width: 69px;
     margin-left: 5px;
 }
 
-.bar {
+.Bar {
     padding: 2px 0px;
     /* width: 90%;  */
     border-radius: 10px;
@@ -33,7 +33,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .ratingbreakdown {
+    .RatingBreakdown {
         width: 100%;
     }
 }

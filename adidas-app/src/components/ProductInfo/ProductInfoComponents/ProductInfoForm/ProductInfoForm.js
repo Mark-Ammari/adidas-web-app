@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./ProductInfoForm.css";
+import classes from "./ProductInfoForm.module.css";
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductInfoForm = props => {
-    const classes = useStyles();
+    const styles = useStyles();
     const searchProduct = useSelector(state => state.searchProduct.searchProduct)
     const sizesProduct = useSelector(state => state.sizesProduct.sizesProduct)
     const loading = useSelector(state => state.sizesProduct.loading)
@@ -39,12 +39,12 @@ const ProductInfoForm = props => {
     let [quantity, setQuantity] = useState(1)
 
     return (
-        <div className="productinfoform" >
-            <div className="productinfoformcontrol">
-                <FormControl className={classes.formControl}>
+        <div className={classes.ProductInfoForm} >
+            <div className={classes.ProductInfoFormControl}>
+                <FormControl className={styles.formControl}>
                     <InputLabel style={{ color: "#767677" }} htmlFor="age-native-simple">Select Size</InputLabel>
                     <Select
-                        className={classes.select}
+                        className={styles.select}
                         native
                         onChange={(e) => { setSize(e.target.value) }}
                         value={size}
@@ -61,10 +61,10 @@ const ProductInfoForm = props => {
                             })}
                     </Select>
                 </FormControl>
-                <FormControl className={classes.formControl}>
+                <FormControl className={styles.formControl}>
                     <InputLabel style={{ color: "#767677" }} htmlFor="quantity-native-simple">Quantity</InputLabel>
                     <Select
-                        className={classes.select}
+                        className={styles.select}
                         native
                         onChange={(e) => { setQuantity(e.target.value) }}
                         value={quantity}
@@ -78,7 +78,7 @@ const ProductInfoForm = props => {
                 </FormControl>
             </div>
             <AdiBtn width="calc(100% - 30px)">Add to Bag</AdiBtn>
-            <Typography className={classes.margin} variant="subtitle1" component="h5" gutterBottom color="textSecondary">{searchProduct["product_description"].text}</Typography>
+            <Typography className={styles.margin} variant="subtitle1" component="h5" gutterBottom color="textSecondary">{searchProduct["product_description"].text}</Typography>
         </div>
     );
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import './AboutUs.css';
+import classes from './AboutUs.module.css';
 import { Typography } from '@material-ui/core';
 
-const aboutUs = (props) => {
+const aboutUs = () => {
     return (
-        <section className="aboutus">
+        <section className={classes.AboutUs}>
             <article>
                 <Typography style={{fontWeight: "bold"}} variant="subtitle1" gutterBottom>
                     STORIES, STYLE, AND SPORTING GOODS AT ADIDAS, SINCE 1949

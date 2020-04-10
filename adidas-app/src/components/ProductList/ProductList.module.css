@@ -1,4 +1,4 @@
-.productlist {
+.ProductList {
     width: 100%;
     display: grid;
     justify-content: center;
@@ -8,21 +8,21 @@
     gap: 5px;
 }
 
-.productlistcurrentprice span:nth-child(1) {
+.ProductListCurrentPrice span:nth-child(1) {
     color: red;
     margin-right: 5px;
 }
 
-.productlistcurrentprice span:nth-child(2) {
+.ProductListCurrentPrice span:nth-child(2) {
     text-decoration: line-through;
 }
 
-.productliststandardprice span{
+.ProductListStandardPrice span{
     color: black
 }
 
 @media only screen and (max-width: 625px) {
-    .productlist {
+    .ProductList {
         width: 100%;
         display: grid;
         justify-content: center;
@@ -33,19 +33,19 @@
 }
 
 @media only screen and (min-width: 625px) {
-    .productlist {
+    .ProductList {
         grid-template-columns: 305px 305px;
     }
 }
 
 @media only screen and (min-width: 935px) {
-    .productlist {
+    .ProductList {
         grid-template-columns: 305px 305px 305px;
     }
 }
 
 @media only screen and (min-width: 1245px) {
-    .productlist {
+    .ProductList {
         grid-template-columns: 305px 305px 305px 305px;
     }
 }

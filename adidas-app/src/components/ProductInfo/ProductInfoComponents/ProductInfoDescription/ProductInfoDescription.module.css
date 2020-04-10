@@ -1,4 +1,4 @@
-.colorvariationlinks a img {
+.ColorVariationLinks a img {
     width: 75px;
     height: 75px;
     margin: 7px 7px 7px 0;
@@ -6,26 +6,26 @@
     transition: 0.5ms ease-in-out;
 }
 
-.colorvariationlinks a img:hover {
+.ColorVariationLinks a img:hover {
     transform: scale(1.05);
 }
 
-.productInfocontainer {
+.ProductInfoContainer {
     padding-left: 10px;
 }
 
-.jumptoreviews {
+.JumpToReviews {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     margin-top: 5px;
 }
 
-.jumptoreviews a {
+.JumpToReviews a {
    color: black;
    text-decoration: none;
 }
 
-.jumptoreviews a:hover {
+.JumpToReviews a:hover {
    text-decoration: underline;
  }

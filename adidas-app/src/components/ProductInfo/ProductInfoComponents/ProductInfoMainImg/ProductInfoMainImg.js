@@ -1,20 +1,20 @@
 import React from 'react';
-import "./ProductInfoMainImg.css";
+import classes from "./ProductInfoMainImg.module.css";
 import { IconButton } from '@material-ui/core';
 import { ArrowRight, ArrowLeft } from '@material-ui/icons';
 import ProductBadge from '../../../ProductBadge/ProductBadge';
 
 const ProductInfoMainImg = props => {
     return (
-        <div className="productinfomainimg">
+        <div className={classes.ProductInfoMainImg}>
             <div
                 style={{
                     backgroundImage: `url(${props.search})`
                 }}
-                className="productinfoimagecontainer"
+                className={classes.ProductInfoImageContainer}
             >
                 <ProductBadge badge={props.badge}/>
-                <div className="staccontainer">
+                <div className={classes.StacContainer}>
                     <IconButton onClick={props.stacleft}>
                         <ArrowLeft fontSize="large" />
                     </IconButton>

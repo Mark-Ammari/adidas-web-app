@@ -1,4 +1,4 @@
-.aboutus {
+.AboutUs {
     display: flex;
     background-color: #ebedee;
     padding: 40px 0px;
@@ -6,56 +6,56 @@
     flex-direction: row;
 }
 
-.aboutus article {
+.AboutUs article {
     width: 500px;
     margin: 1em
 }
 
 @media only screen and (max-width: 320px) {
-    .aboutus article {
+    .AboutUs article {
         width: 85%;
     }
-    .aboutus {
+    .AboutUs {
         flex-direction: column;
         align-items: center;
     }
 }
 
 @media only screen and (min-width: 321px) {
-    .aboutus article {
+    .AboutUs article {
         width: 85%;
     }
-    .aboutus {
+    .AboutUs {
         flex-direction: column;
         align-items: center;
     }
 }
 
 @media only screen and (min-width: 600px) {
-    .aboutus article {
+    .AboutUs article {
         width: 85%;
     }
-    .aboutus {
+    .AboutUs {
         flex-direction: column;
         align-items: center;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .aboutus article {
+    .AboutUs article {
         width: 85%;
     }
-    .aboutus {
+    .AboutUs {
         flex-direction: column;
         align-items: center;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    .aboutus article {
+    .AboutUs article {
         width: 500px;
     }
-    .aboutus {
+    .AboutUs {
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
@@ -63,10 +63,10 @@
 }
 
 @media only screen and (min-width: 1200px) {
-    .aboutus article {
+    .AboutUs article {
         width: 500px;
     }
-    .aboutus {
+    .AboutUs {
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
@@ -74,10 +74,10 @@
 }
 
 @media only screen and (min-width: 1366px) {
-    .aboutus article {
+    .AboutUs article {
         width: 500px;
     }
-    .aboutus {
+    .AboutUs {
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;

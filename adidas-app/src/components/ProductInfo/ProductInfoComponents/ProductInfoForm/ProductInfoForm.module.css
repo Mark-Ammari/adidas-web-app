@@ -1,9 +1,9 @@
-.productinfoformcontrol {
+.ProductInfoFormControl {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.productinfoform {
+.ProductInfoForm {
     width: 100%;
 }

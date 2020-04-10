@@ -1,19 +1,17 @@
 import React from 'react';
-import './DropdownItem.css';
+import classes from './DropdownItem.module.css';
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux';
 
 const DropdownItem = (props) => {
-
     return (
-        <div className="dropdown">
+        <div className={classes.Dropdown}>
             <NavLink
-            className="navlink dropbtn"
+            className={classes.NavlinkDropbtn}
             to={{ 
                 pathname: "/" + props.name,
                 search: "?start=0"
             }}>{props.name}</NavLink>
-            <div className="dropdown-content">
+            <div className={classes.DropdownContent}>
                 {props.children}
             </div>
         </div>

@@ -1,18 +1,18 @@
 import React from 'react';
-import './TrendingBar.css';
+import classes from './TrendingBar.module.css';
 import { useSelector } from 'react-redux';
 import { Typography } from '@material-ui/core';
 import ProductListProductCard from '../ProductList/ProductListComponents/ProductListProductCard/ProductListProductCard';
 
-const TrendingBar = (props) => {
+const TrendingBar = () => {
     const trendingList = useSelector(state => state.trendingList.trendingList)
     const loading = useSelector(state => state.trendingList.loading)
     return (
         <>
-            <div className="trendingtitle">
+            <div className={classes.TrendingTitle}>
                 <Typography variant="h4"><strong>What's Trending</strong></Typography>
             </div>
-            <div className="trendingbar">
+            <div className={classes.TrendingBar}>
                 {loading ? null :
                     trendingList.items.map((item, key) => {
                         return <ProductListProductCard
@@ -26,12 +26,12 @@ const TrendingBar = (props) => {
                             division={item.division}
                             // colorvariations={item.colorVariations.length}
                             price={ item["current-price"] < item["original-price"] ?
-                                <div className="productlistcurrentprice">
+                                <div className={classes.ProductListCurrentPrice}>
                                     <span>${item["current-price"]}</span>
                                     <span>${item["original-price"]}</span>
                                 </div>
                                 :
-                                <div className="productliststandardprice"><span>${item["current-price"]}</span></div>
+                                <div className={classes.ProductListStandardPrice}><span>${item["current-price"]}</span></div>
                             }
                         />
                     })}

@@ -1,4 +1,4 @@
-.productlistbadge {
+.ProductListBadge {
     background-color: #fff;
     color: #000;
     font-style: italic;
@@ -10,7 +10,7 @@
     display: inline-block;
 }
 
-.productlistproductcardbadgecontainer {
+.ProductListBadgeContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;

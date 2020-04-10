@@ -16,9 +16,9 @@ const StyledRating = withStyles({
 })(Rating);
 
 export default function Ratings(props) {
-  const classes = useStyles();
+  const styles = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={styles.root}>
       <StyledRating size="small" readOnly name="rating" defaultValue={props.value} />
     </div>
   );

@@ -1,4 +1,4 @@
-.productinfospecsmobilebtn {
+.ProductInfoSpecsMobileBtn {
     width: calc(100% - 20px);
     display: flex;
     height: auto;
@@ -12,16 +12,16 @@
     cursor: pointer;
 }
 
-.productinfospecsmobile {
+.ProductInfoSpecsMobile {
     overflow-y: hidden;
 }
 
-.productinfospecsmobileimg{
+.ProductInfoSpecsMobileImg{
     height: auto;
     width: 100%
 }
 
-.productinfospecsmobileimg img{
+.ProductInfoSpecsMobileImg img{
     height: auto;
     width: 100%
 }

@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
-import './ProductListContainer.css';
 import ProductList from '../../ProductList/ProductList';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as productListAction from '../../../store/actions/productList';
 import * as productItemsAction from '../../../store/actions/productItems';
 import * as filterAction from '../../../store/actions/filter';
 
 const ProductListContainer = (props) => {
     const dispatch = useDispatch()
-    // const sortBy = useSelector(state => state.productList.sortBy)
 
     useEffect(() => {
         dispatch(productListAction.fetchProductList("us", props.match.url.slice(1), props.location.search.slice(7)))

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './Collapsibles.module.css';
 import Collapsible from '../Collapsible';
 import { List } from '@material-ui/core';

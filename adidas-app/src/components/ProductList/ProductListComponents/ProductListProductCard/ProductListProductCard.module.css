@@ -1,4 +1,4 @@
-.productListProductCardImg {
+.ProductListProductCardImg {
     width: 100%;
     height: 300px;
     background-size: cover;
@@ -7,12 +7,12 @@
     border-radius: 5px;
 }
 
-.productlistproductcard a {
+.ProductListProductCard a {
     text-decoration: none;
     color: black;
 }
 
-.productlistproductcard {
+.ProductListProductCard {
     width: 100%;
     height: 450px;
     cursor: pointer;
@@ -22,11 +22,11 @@
     position: relative;
 }
 
-.productlistproductcard:hover {
+.ProductListProductCard:hover {
     border: 1px solid black;
 }
 
-.productlistproductcardmargin {
+.ProductListProductCardMargin {
     margin-top: 5px;
     padding-left: 5px;
 }

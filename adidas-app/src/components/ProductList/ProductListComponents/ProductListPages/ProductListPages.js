@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ProductListPages.css';
+import classes from './ProductListPages.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { IconButton, Typography } from '@material-ui/core';
 import { ArrowBackIosRounded, ArrowForwardIosRounded } from '@material-ui/icons';
@@ -37,7 +37,7 @@ const ProductListPages = () => {
     }
 
     return (
-        <div className="productlistpages">
+        <div className={classes.ProductListPages}>
             {loading ? null
                 :
                 <>

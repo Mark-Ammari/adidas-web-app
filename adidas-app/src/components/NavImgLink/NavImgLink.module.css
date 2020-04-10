@@ -1,4 +1,4 @@
-.navimglink {
+.NavImgLink {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,66 +12,66 @@
     border-radius: 5px;
 }
 
-.navimglink:hover {
+.NavImgLink:hover {
     opacity: 0.75;
 }
 
-.navimglink a {
+.NavImgLink a {
     color: black;
     font-weight: bold;
     padding: 5px;
     text-transform: uppercase;
 }
 
-.navimglink a:hover {
+.NavImgLink a:hover {
     color: white;
     background: black
 }
 
 @media only screen and (max-width: 320px) {
-    .navimglink {
+    .NavImgLink {
         width: 250px;
         height: 250px
     }
 }
 
 @media only screen and (min-width: 321px) {
-    .navimglink {
+    .NavImgLink {
         width: 300px;
         height: 300px
     }
 }
 
 @media only screen and (min-width: 600px) {
-    .navimglink {
+    .NavImgLink {
         width: 350px;
         height: 350px
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .navimglink {
+    .NavImgLink {
         width: 300px;
         height: 300px
     }
 }
 
 @media only screen and (min-width: 992px) {
-    .navimglink {
+    .NavImgLink {
         width: 400px;
         height: 400px
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    .navimglink {
+    .NavImgLink {
         width: 450px;
         height: 450px
     }
 }
 
 @media only screen and (min-width: 1366px) {
-    .navimglink {
+    .NavImgLink {
         width: 300px;
         height: 300px
     }

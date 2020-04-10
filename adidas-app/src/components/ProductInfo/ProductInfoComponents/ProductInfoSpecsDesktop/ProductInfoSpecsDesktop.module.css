@@ -1,16 +1,16 @@
-.productinfospecsdesktopdescription {
+.ProductInfoSpecsDesktopDescription {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.productinfospecsdesktopdescription div{
+.ProductInfoSpecsDesktopDescription div{
     width: 100%;
     height: auto;
     margin-right: 1em;
 }
 
-.productinfospecsdesktopdescription img{
+.ProductInfoSpecsDesktopDescription img{
     width: 100%;
     height: auto
 }

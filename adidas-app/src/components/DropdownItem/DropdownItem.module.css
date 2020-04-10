@@ -1,4 +1,4 @@
-.dropbtn {
+.NavlinkDropbtn {
     position: relative;
     letter-spacing: 1.87px;
     text-transform: uppercase;
@@ -13,7 +13,7 @@
     text-decoration: none;
 }
   
-.dropdown {
+.Dropdown {
     display: inline-block;
     height: 45px;
     margin-top: 3px;
@@ -27,12 +27,12 @@
     z-index: 999;
 }
 
-.dropdown:hover {
+.Dropdown:hover {
     border-bottom: 1px solid #000;
     margin-bottom: -1px;
 }
   
-.dropdown-content {
+.DropdownContent {
     display: none;
     position: absolute;
     z-Index: 1;
@@ -44,11 +44,11 @@
     border-bottom: 1px solid #ebedee;
 }
   
-.dropdown-content .navlink {
+.DropdownContent .NavlinkDropdown {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown:hover .dropdown-content {display: block;}
+.Dropdown:hover .DropdownContent {display: block;}

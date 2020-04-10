@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import Divider from '@material-ui/core/Divider';
@@ -9,10 +9,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { Menu } from '@material-ui/icons';
 import Logo from '../Logo/Logo';
-import { List } from '@material-ui/core';
-import Collapsible from '../Collapisble/Collapsible';
-import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import Collapsibles from '../Collapisble/Collapsibles/Collapsibles';
 
 const useStyles = makeStyles(theme => ({
@@ -38,9 +34,9 @@ const TransitionRight = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="right" ref={ref} {...props} />;
 });
 
-const TransitionLeft = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="left" ref={ref} {...props} />;
-});
+// const TransitionLeft = React.forwardRef(function Transition(props, ref) {
+//   return <Slide direction="left" ref={ref} {...props} />;
+// });
 
 export default function FullScreenDialog() {
   const classes = useStyles();

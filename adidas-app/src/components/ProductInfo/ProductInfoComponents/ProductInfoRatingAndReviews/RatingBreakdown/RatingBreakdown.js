@@ -1,20 +1,15 @@
 import React from 'react';
-import './RatingBreakdown.css';
-import { Typography, makeStyles } from '@material-ui/core';
-
-const useStyles = makeStyles({
-
-});
+import classes from './RatingBreakdown.module.css';
+import { Typography } from '@material-ui/core';
 
 const RatingBreakdown = props => {
-    const classes = useStyles()
     return (
-        <div className="ratingbreakdown">
-            <div className="ratings"><Typography variant="subtitle2">{props.rating} Stars</Typography></div>
-            <div className="skillbar">
-                <div style={{ width: props.width }} className="bar"></div>
+        <div className={classes.RatingBreakdown}>
+            <div className={classes.Ratings}><Typography variant="subtitle2">{props.rating} Stars</Typography></div>
+            <div className={classes.SkillBar}>
+                <div style={{ width: props.width }} className={classes.Bar}></div>
             </div>
-            <div className="count"><Typography color="textSecondary" variant="subtitle2" >{props.value}</Typography></div>
+            <div className={classes.Count}><Typography color="textSecondary" variant="subtitle2" >{props.value}</Typography></div>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import './AdidasToolbar.css';
+import classes from './AdidasToolbar.module.css';
 import { IconButton, Badge, withStyles } from '@material-ui/core';
 import { FavoriteRounded, LocalMallRounded, PersonRounded } from '@material-ui/icons';
 
@@ -12,7 +12,7 @@ const StyledBadge = withStyles((theme) => ({
 
 const AdidasToolbar = () => {
     return (
-        <div className="adidastoolbarcontainer">
+        <div className={classes.AdidasToolbarContainer}>
             <IconButton>
                 <StyledBadge badgeContent={1} >
                     <FavoriteRounded color="disabled" />

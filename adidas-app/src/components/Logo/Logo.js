@@ -1,10 +1,10 @@
 import React from 'react';
-import './Logo.css';
+import classes from './Logo.module.css';
 import logo from '../../assets/adidaslogo.svg'
 
 const Logo = (props) => (
 <img 
-    className="Logo" 
+    className={classes.Logo} 
     src={logo} 
     alt="adidas-logo"
     style={{

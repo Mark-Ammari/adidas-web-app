@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ProductInfoRatingsAndReviews.css';
+import classes from './ProductInfoRatingsAndReviews.module.css';
 import { Typography, Button } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import Ratings from '../../../Ratings/Ratings'
@@ -9,7 +9,6 @@ import { useHistory } from 'react-router-dom';
 import * as ratingsAndReviewsAction from '../../../../store/actions/ratingsAndReviews';
 
 const ProductInfoRatingsAndReviews = () => {
-
     const getRatings = useSelector(state => state.ratingsAndReviews.ratingsProduct)
     const ratingDistribution = useSelector(state => state.ratingsAndReviews.distributionList)
     const reviews = useSelector(state => state.ratingsAndReviews.reviewList)
@@ -25,18 +24,18 @@ const ProductInfoRatingsAndReviews = () => {
 
     return (
         <>
-            <div id="reviews" className="productinforatingsandreviews">
+            <div id="reviews" className={classes.ProductInfoRatingsAndReviews}>
                 {getRatings.overallRating && getRatings.recommendationPercentage && ratingDistribution.length > 0 && reviews.length > 0 ?
                     <Typography variant="h4" align="center" gutterBottom><strong>Ratings &amp; Reviews</strong></Typography>
                     :
                     null
                 }
-                <div className="ratingreviews">
+                <div className={classes.RatingReviews}>
                     <div>
-                        <div className="ratingsstats">
+                        <div className={classes.RatingsStats}>
                             {
                                 getRatings.overallRating ?
-                                    <div className="ratingsbox">
+                                    <div className={classes.RatingsBox}>
                                         <Typography variant="h4" gutterBottom>{getRatings.overallRating}</Typography>
                                         <Ratings value={getRatings.overallRating} />
                                         <Typography variant="subtitle1"><strong>{getRatings.reviewCount}</strong> Reviews</Typography>
@@ -48,7 +47,7 @@ const ProductInfoRatingsAndReviews = () => {
 
                             {
                                 getRatings.recommendationPercentage ?
-                                    <div className="recommendationbox">
+                                    <div className={classes.RecommendationBox}>
                                         <Typography variant="h4" ><strong>{`%${getRatings.recommendationPercentage}`}</strong></Typography>
                                         <Typography variant="subtitle1">of customers recommend this product</Typography>
                                     </div>
@@ -72,7 +71,7 @@ const ProductInfoRatingsAndReviews = () => {
                             }
                         </div>
                     </div>
-                    <div className="reviews">
+                    <div className={classes.Reviews}>
                        
                         {reviews.length > 0 ?
                             <>
@@ -108,7 +107,7 @@ const ProductInfoRatingsAndReviews = () => {
                             : null
                         }
                         {reviews.length >= getRatings.reviewCount ? null :
-                            <div onClick={() => { setLoadMore(loadMore + 2) }} className="loadmorebtn"><span>LOAD MORE</span></div>
+                            <div onClick={() => { setLoadMore(loadMore + 2) }} className={classes.LoadMoreBtn}><span>LOAD MORE</span></div>
                         }
                     </div>
                 </div>

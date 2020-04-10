@@ -1,20 +1,20 @@
-.productinfo {
+.ProductInfo {
     min-height: 100%;
     overflow: hidden;
 }
 
-.completethelook {
+.CompleteTheLook {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     margin: auto
 }
 
-.productinfoimages {
+.ProductInfoImages {
     position: relative
 }
 
-.productinfogallery {
+.ProductInfoGallery {
     display: flex;
     justify-content: flex-start;
     margin-top: 20px;
@@ -26,14 +26,14 @@
     flex-wrap: nowrap;
 }
 
-.productinfogallery img {
+.ProductInfoGallery img {
     margin: 5px;
     width: 100%;
     opacity: 0.25;;
     border-radius: 5px;
 }
 
-.productinfogallery img:hover {
+.ProductInfoGallery img:hover {
     opacity: 1;
     cursor: pointer;
 }
@@ -47,12 +47,12 @@
 @media only screen and (min-width: 768px) {}
 
 @media only screen and (min-width: 992px) {
-    .productinfo {
+    .ProductInfo {
         min-height: 100%;
         overflow: hidden;
         display: flex
     }
-    .productinfo div {
+    .ProductInfo div {
         width: 100%;
     }
 }

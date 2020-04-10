@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductListDropdown = (props) => {
-    const classes = useStyles();
+    const styles = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = event => {
@@ -34,7 +34,7 @@ const ProductListDropdown = (props) => {
 
     return (
         <div >
-            <Button className={classes.btnMargin} aria-describedby={id} variant="text" onClick={handleClick}>
+            <Button className={styles.btnMargin} aria-describedby={id} variant="text" onClick={handleClick}>
                 <strong>{props.title}</strong>
                 {open ? <KeyboardArrowDownRounded /> : <KeyboardArrowUpRounded />}
             </Button>
@@ -52,7 +52,7 @@ const ProductListDropdown = (props) => {
                     horizontal: 'left',
                 }}
             >
-                <div className={classes.paper}>
+                <div className={styles.paper}>
                     {props.children}
                 </div>
             </Popover>

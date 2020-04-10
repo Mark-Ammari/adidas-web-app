@@ -1,10 +1,10 @@
-.productlistproductcardskeleton {
+.ProductListProductCardSkeleton {
     height: 452px;
     width: 100%;
     border: 1px solid transparent;
 }
 
-.productlistproductcardskeletonimg {
+.ProductListProductCardSkeletonImg {
     width: 100%;
     border-radius: 5px;
     height: 300px;
@@ -13,11 +13,11 @@
     -webkit-animation: flow infinite 1s ease-in-out;
 }
 
-.productlistproductcardmarginskeleton {
+.ProductListProductCardMarginSkeleton {
     padding-left: 5px;
 }
 
-.productlistproductcardmarginskeleton p {
+.ProductListProductCardMarginSkeleton p {
     animation: flow infinite 1s ease-in-out;
     background-color: rgba(235, 237, 238, 1);
     -webkit-animation: flow infinite 1s ease-in-out;

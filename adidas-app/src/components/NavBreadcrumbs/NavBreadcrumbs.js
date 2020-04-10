@@ -1,11 +1,11 @@
 import React from 'react';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import { NavLink } from 'react-router-dom'
-import './NavBreadcrumbs.css'
+import { NavLink } from 'react-router-dom';
+import classes from './NavBreadcrumbs.module.css';
 
 const NavBreadcrumbs = props => {
   return (
-    <Breadcrumbs className="breadcrumbs" aria-label="breadcrumb">
+    <Breadcrumbs className={classes.Breadcrumbs} aria-label="breadcrumb">
       <NavLink to="/">
         Home
       </NavLink>

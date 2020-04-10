@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css';
+import classes from './Navbar.module.css';
 import DropdownItem from '../DropdownItem/DropdownItem';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -11,9 +11,9 @@ const Navbar = () => {
     const kidsData = useSelector(state => state.linksData.kidsData)
 
     return (
-        <nav className="navbarnavlinks">
+        <nav className={classes.NavbarNavlinks}>
             <DropdownItem name="men">
-                <nav className="navlinks">
+                <nav className={classes.Navlinks}>
                     <ul>
                         {loading ? null : menData.shoes.map((shoes, key) => {
                             return <li key={key}><NavLink to={{

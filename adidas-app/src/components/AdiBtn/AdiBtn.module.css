@@ -1,4 +1,4 @@
-.btncontainer {
+.BtnContainer {
     height: 25px;
     padding: 10px;
     background-color: black;
@@ -18,11 +18,11 @@
     font-family: AdihausDIN,Helvetica,Arial,sans-serif;
 }
 
-.btncontainer:hover {
+.BtnContainer:hover {
     color: grey
 }
 
-.btntext {
+.BtnText {
     width: 100%;
     display: flex;
     justify-content: space-between;

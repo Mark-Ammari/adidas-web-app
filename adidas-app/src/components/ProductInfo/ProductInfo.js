@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ProductInfo.css';
+import classes from './ProductInfo.module.css';
 import { useSelector } from 'react-redux';
 import { Typography, useMediaQuery } from '@material-ui/core';
 import ProductInfoMainImg from './ProductInfoComponents/ProductInfoMainImg/ProductInfoMainImg';
@@ -43,10 +43,10 @@ const ProductInfo = (props) => {
         <div>
             {loading ? null :
                 <>
-                    <div className="productinfo">
-                        <div className="productinfoimages">
+                    <div className={classes.ProductInfo}>
+                        <div className={classes.ProductInfoImages}>
                             <ProductInfoMainImg badge={searchProduct["attribute_list"]["badge_text"]} search={searchProduct["view_list"][pointer]["image_url"]} stacleft={stacLeft} stacright={stacRight} />
-                            <div className="productinfogallery">
+                            <div className={classes.ProductInfoGallery}>
                                 {searchProduct["view_list"].map((img, key) => {
                                     return <div key={key}><img
                                         onClick={() => { setPointer(key) }}

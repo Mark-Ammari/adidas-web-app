@@ -1,4 +1,4 @@
-.banner {
+.Banner {
     width: 100%;
     height: 500px;
     margin: 0 auto;
@@ -9,7 +9,7 @@
     background-image: url(../../assets/bannermobile.webp);
 }
 
-.bannerslogan {
+.BannerSlogan {
     text-shadow: 1px 1px #fff;
     font-family: Helvetica, Arial, sans-serif;
     text-transform: uppercase;
@@ -17,11 +17,11 @@
     margin-bottom: 0;
 }
 
-.textcontainer {
+.TextContainer {
     margin-left: 1em;
 }
 
-.bannercontainer {
+.BannerContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +30,7 @@
 }
 
 @media only screen and (max-width: 320px) {
-    .banner {
+    .Banner {
         width: 100%;
         height: 500px;
         margin: 0 auto;
@@ -41,7 +41,7 @@
         background-image: url(../../assets/bannermobile.webp);
     }
     
-    .bannerslogan {
+    .BannerSlogan {
         text-shadow: 1px 1px #fff;
         font-family: Helvetica, Arial, sans-serif;
         text-transform: uppercase;
@@ -49,11 +49,11 @@
         margin-bottom: 0;
     }
     
-    .textcontainer {
+    .TextContainer {
         margin-left: 1em;
     }
     
-    .bannercontainer {
+    .Bannercontainer {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -63,62 +63,62 @@
 }
 
 @media only screen and (min-width: 321px) {
-    .banner {
+    .Banner {
         height: 550px;
     }    
 }
 
 @media only screen and (min-width: 600px) {
-    .bannerslogan {
+    .Bannerslogan {
         font-size: 52pt;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .banner {
+    .Banner {
         height: 600px;
         background-image: url(../../assets/banner.webp);
     }
-    .bannerslogan {
+    .BannerSlogan {
         font-size: 32pt;
     }
-    .bannercontainer {
+    .BannerContainer {
         width: 350px;
         top: 0;
     }    
 }
 
 @media only screen and (min-width: 992px) {
-    .banner {
+    .Banner {
         height: 600px;
         background-image: url(../../assets/banner.webp);
     }
-    .bannerslogan {
+    .BannerSlogan {
         font-size: 42pt;
     }
-    .bannercontainer {
+    .BannerContainer {
         width: 500px;
         top: 0;
     }    
 }
 
 @media only screen and (min-width: 1200px) {
-    .banner {
+    .Banner {
         height: 600px;
     }
-    .bannerslogan {
+    .BannerSlogan {
         font-size: 42pt;
     }
-    .bannercontainer {
+    .BannerContainer {
         width: 550px;
     }    
 }
 
 @media only screen and (min-width: 1366px) {
-    .bannerslogan {
+    .BannerSlogan {
         font-size: 52pt;
     }
-    .bannercontainer {
+    .BannerContainer {
         width: 600px;
     }    
 }

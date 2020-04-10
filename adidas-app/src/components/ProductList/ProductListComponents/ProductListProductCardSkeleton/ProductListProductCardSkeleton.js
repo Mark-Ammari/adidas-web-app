@@ -1,11 +1,11 @@
 import React from 'react';
-import './ProductListProductCardSkeleton.css';
+import classes from './ProductListProductCardSkeleton.module.css';
 
 const ProductListProductCardSkeleton = () => {
     return (
-        <div className="productlistproductcardskeleton">
-            <div className="productlistproductcardskeletonimg"></div>
-            <div className="productlistproductcardmarginskeleton">
+        <div className={classes.ProductListProductCardSkeleton}>
+            <div className={classes.ProductListProductCardSkeletonImg}></div>
+            <div className={classes.ProductListProductCardMarginSkeleton}>
                 <p></p>
                 <p></p>    
                 <p></p>

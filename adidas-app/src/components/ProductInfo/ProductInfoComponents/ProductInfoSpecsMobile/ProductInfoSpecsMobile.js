@@ -1,5 +1,5 @@
 import React from 'react';
-import "./ProductInfoSpecsMobile.css";
+import classes from "./ProductInfoSpecsMobile.module.css";
 import {
     makeStyles,
     Dialog,
@@ -34,7 +34,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const ProductInfoSpecsMobile = (props) => {
-    const classes = useStyles();
+    const styles = useStyles();
     const [open, setOpen] = React.useState(false);
     let detailType = null
 
@@ -52,7 +52,7 @@ const ProductInfoSpecsMobile = (props) => {
         case "description":
             detailType = (
                 searchProduct.hasOwnProperty("product_description") ? <>
-                    <div className="productinfospecsmobileimg">
+                    <div className={classes.ProductInfoSpecsMobileImg}>
                         <img src={searchProduct["product_description"]["description_assets"]["image_url"]} alt="product_media" />
                     </div>
 
@@ -88,18 +88,18 @@ const ProductInfoSpecsMobile = (props) => {
     }
 
     return (
-        <div className="productinfospecsmobile">
-            <div className="productinfospecsmobilebtn" onClick={handleClickOpen}>
+        <div className={classes.ProductInfoSpecsMobile}>
+            <div className={classes.ProductInfoSpecsMobileBtn} onClick={handleClickOpen}>
                 <span>{props.children}</span>
                 <span><ArrowRightAltRounded /></span>
             </div>
-            <Dialog classes={{ paper: classes.root }} fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-                <AppBar className={classes.appBar}>
+            <Dialog classes={{ paper: styles.root }} fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+                <AppBar className={styles.appBar}>
                     <Toolbar>
                         <IconButton edge="start" onClick={handleClose} aria-label="close">
                             <ChevronLeftRounded color="action" />
                         </IconButton>
-                        <Typography variant="h6" color="textPrimary" className={classes.title}>{props.children}</Typography>
+                        <Typography variant="h6" color="textPrimary" className={styles.title}>{props.children}</Typography>
                     </Toolbar>
                 </AppBar>
                 {detailType}
