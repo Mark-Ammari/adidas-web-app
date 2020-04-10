@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './App.css';
+import classes from './App.module.css';
 import Header from './components/Header/Header';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import ProductListContainer from './components/Pages/ProductListContainer/ProductListContainer';
@@ -24,7 +24,7 @@ function App() {
     return null
   } else {
     return (
-      <div className="app">
+      <div className={classes.App}>
         <BrowserRouter>
           <Header />
           <ScrollToTop />
