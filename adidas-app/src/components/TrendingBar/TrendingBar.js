@@ -25,7 +25,7 @@ const TrendingBar = () => {
                             nameuri={item.name.split(' ').join('-').split('/').join('-')}
                             division={item.division}
                             // colorvariations={item.colorVariations.length}
-                            price={ item["current-price"] < item["original-price"] ?
+                            price={item["current-price"] < item["original-price"] ?
                                 <div className={classes.ProductListCurrentPrice}>
                                     <span>${item["current-price"]}</span>
                                     <span>${item["original-price"]}</span>
@@ -34,7 +34,8 @@ const TrendingBar = () => {
                                 <div className={classes.ProductListStandardPrice}><span>${item["current-price"]}</span></div>
                             }
                         />
-                    })}
+                    })
+                }
             </div>
         </>
     );
