@@ -7,7 +7,7 @@ const trending = require('./routes/api/trending');
 const productlist = require('./routes/api/productlist');
 const models = require('./routes/api/models');
 
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 const server = express();
 server.use(express.json());
 
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'production') {
     server.use(express.static('adidas-app/build'));
 
     server.get('*', (req, res) => {
-        res.sendfile(path.resolve(__dirname, 'adidas-app', 'build', 'index.html'));
+        res.sendfile(path.join(__dirname, 'adidas-app', 'build', 'index.html'));
     })
 }
 

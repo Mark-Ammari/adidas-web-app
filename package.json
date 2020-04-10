@@ -9,7 +9,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix adidas-app",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix adidas-app && npm run build -- prefix adidas-app"
+    "heroku-postbuild": "cd adidas-app && npm install && npm run build"
   },
   "author": "Mark Ammari",
   "license": "MIT",
