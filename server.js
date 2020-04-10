@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose');
-// const bodyParser = require('body-parser');
+const path = require('path');
 
 const adidas = require('./routes/api/adidas');
 const trending = require('./routes/api/trending');
@@ -19,13 +19,22 @@ server.use((req, res, next) => {
 
 const db = require('./config/keys').mongoURI;
 
-mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(() => console.log("MongoDB Connected"))
-.catch((err) => console.log(err))
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("MongoDB Connected"))
+    .catch((err) => console.log(err))
 
 server.use('/api/adidas', adidas);
 server.use('/api/trending', trending);
 server.use('/api/productlist', productlist);
 server.use('/api/models', models);
+
+if (process.env.NODE_ENV === 'production') {
+    //set static folder
+    server.use(express.static('adidas-app/build'));
+
+    server.get('*', (req, res) => {
+        res.sendfile(path.resolve(__dirname, 'adidas-app', 'build', 'index.html'));
+    })
+}
 
 server.listen(PORT, () => console.log(`Listening in port: ${PORT}`))
