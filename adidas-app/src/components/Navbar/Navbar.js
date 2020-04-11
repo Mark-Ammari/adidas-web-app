@@ -41,7 +41,7 @@ const Navbar = () => {
                 </nav>
             </DropdownItem>
             <DropdownItem name="women">
-                <nav className="navlinks">
+                <nav className={classes.Navlinks}>
                     <ul>
                         {loading ? null : womenData.shoes.map((shoes, key) => {
                             return <li key={key}><NavLink to={{
@@ -69,7 +69,7 @@ const Navbar = () => {
                 </nav>
             </DropdownItem>
             <DropdownItem name="kids">
-                <nav className="navlinks">
+                <nav className={classes.Navlinks}>
                     <ul>
                         {loading ? null : kidsData.youth.map((youth, key) => {
                             return <li key={key}><NavLink to={{ 

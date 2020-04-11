@@ -38,9 +38,16 @@
     border-radius: 2px;
 }
 
+.Buttons {
+    text-align: center;
+}
+
 @media only screen and (min-width: 992px) {
     .RatingReviews {
         display: flex;
         justify-content: center;
     }
+    .Buttons {
+        text-align: left;
+    }    
 }

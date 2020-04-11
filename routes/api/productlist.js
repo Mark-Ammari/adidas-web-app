@@ -1,7 +1,6 @@
 const express = require('express');
 const axios = require('axios');
 const { parse, stringify } = require('flatted/cjs')
-const fetch = require('node-fetch')
 
 const router = express.Router()
 

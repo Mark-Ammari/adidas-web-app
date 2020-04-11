@@ -28,6 +28,9 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(2),
     flex: 1,
   },
+  button: {
+    margin: "10px"
+  }
 }));
 
 const TransitionRight = React.forwardRef(function Transition(props, ref) {
@@ -44,7 +47,7 @@ export default function FullScreenDialog() {
 
   return (
     <div>
-      <IconButton onClick={() => setOpen(true)}>
+      <IconButton className={classes.button} onClick={() => setOpen(true)}>
         <Menu />
       </IconButton>
       <Dialog fullScreen open={open} onClose={() => setOpen(false)} TransitionComponent={TransitionRight}>
