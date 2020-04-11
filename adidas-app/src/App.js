@@ -19,7 +19,7 @@ function App() {
     dispatch(linksAction.fetchLinks())
     dispatch(trendingAction.fetchTrending())
   }, [dispatch])
-
+console.log(process.env)
   if (loading) {
     return null
   } else {
